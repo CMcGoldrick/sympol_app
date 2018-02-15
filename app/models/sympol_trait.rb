@@ -1,0 +1,2 @@
+class SympolTrait < ApplicationRecord
+end

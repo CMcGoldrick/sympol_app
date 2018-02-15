@@ -1,0 +1,2 @@
+class SympolTraitsController < ApplicationController
+end

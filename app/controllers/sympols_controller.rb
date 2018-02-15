@@ -1,0 +1,2 @@
+class SympolsController < ApplicationController
+end

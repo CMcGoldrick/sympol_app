@@ -1,0 +1,3 @@
+class Sympol < ApplicationRecord
+  
+end
