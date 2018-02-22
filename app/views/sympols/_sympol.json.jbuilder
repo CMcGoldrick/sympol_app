@@ -4,6 +4,7 @@ json.origin sympol.origin
 json.description sympol.description
 
 json.traits sympol.traits
+json.images sympol.images
 
 
 

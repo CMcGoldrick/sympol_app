@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   get '/sympols' => 'sympols#index'
+  # get '/sympols/:search_name' => 'sympols#index'
   post '/sympols' => 'sympols#create'
   get '/sympols/:id' => 'sympols#show'
   patch 'sympols/:id' => 'sympols#update'
@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   get '/sympol_traits/:id' => 'sympol_traits#show'
   patch 'sympol_traits/:id' => 'sympol_traits#update'
   delete 'sympol_traits/:id' => 'sympol_traits#destroy'
-
+  
 end
 
 

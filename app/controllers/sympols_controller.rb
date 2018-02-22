@@ -2,19 +2,23 @@ class SympolsController < ApplicationController
   def index
     @sympols = Sympol.all
 
-    search_term = params[:search]
-    if search_term
-      @sympols = @sympols.where("name iLike ?", "%#{search_term}%")
+    search_name = params[:search_name]
+    if search_name
+      @sympols = @sympols.where("name iLike ?", 
+        "%#{search_name}%" )
     end
 
+    search_origin = params[:search_origin]
+    if search_origin
+      @sympols = @sympols.where("origin iLike ?", "%#{search_origin}%")
+    end
 
+    search_description = params[:search_description]
+    if search_description
+      @sympols = @sympols.where("description iLike ?", "%#{search_description}%")
+    end
 
-    # origin_name = params[:origin]
-    # if category_name
-    #   @sympols = Sympol.find_by(origin: origin_name).sympols
-    # end
-
-    render 'index.json.jbuilder'
+    render 'index.json.jbuilder'   
   end
 
   def create

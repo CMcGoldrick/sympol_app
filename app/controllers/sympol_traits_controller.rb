@@ -6,7 +6,6 @@ class SympolTraitsController < ApplicationController
                   symbols: @sympoltraittrait}
   end
 
-
   def create
     @sympoltrait = SympolTrait.new(
                           name: params[:name],

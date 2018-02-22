@@ -34,3 +34,16 @@
 #   {sympol_id: 3, trait_id: 6},
 # ])
 
+Image.create!([
+    {url: "/images/Triquetra.jpg", sympol_id: 1},
+    {url: "/images/Triskele.jpg", sympol_id: 2},
+    {url: "/images/Awen.jpg", sympol_id: 3},
+    {url: "/images/Triskelion.jpg", sympol_id: 4},
+    {url: "/images/Celtic_Five_Fold.jpg", sympol_id: 5},
+    {url: "/images/Celtic_Spiral.jpg", sympol_id: 21},
+])
+
+
+
+
+
