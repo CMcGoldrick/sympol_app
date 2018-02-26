@@ -1,0 +1,1 @@
+json.array! @sympol_traits, partial: "sympol_trait", as: :sympol_trait

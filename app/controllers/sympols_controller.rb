@@ -3,20 +3,25 @@ class SympolsController < ApplicationController
     @sympols = Sympol.all
 
     search_name = params[:search_name]
-    if search_name
-      @sympols = @sympols.where("name iLike ?", 
-        "%#{search_name}%" )
-    end
+      if search_name
+        @sympols = @sympols.where("name iLike ?", "%#{search_name}%")
+      end
 
     search_origin = params[:search_origin]
-    if search_origin
-      @sympols = @sympols.where("origin iLike ?", "%#{search_origin}%")
-    end
+      if search_origin
+        @sympols = @sympols.where("origin iLike ?", "%#{search_origin}%")
+      end
 
     search_description = params[:search_description]
-    if search_description
-      @sympols = @sympols.where("description iLike ?", "%#{search_description}%")
-    end
+      if search_description
+        @sympols = @sympols.where("description iLike ?", "%#{search_description}%")
+      end
+
+    search_trait = params[:search_trait]
+      if search_trait
+        trait = Trait.find_by(name: search_trait)
+        @sympols = trait.sympols
+      end
 
     render 'index.json.jbuilder'   
   end

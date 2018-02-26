@@ -1,9 +1,13 @@
 class SympolTraitsController < ApplicationController
   def index
-    @sympoltraittrait = SympolTrait.all
+    @sympol_traits = SympolTrait.all
 
-    render json: {message: "check out these sympoltraits:", 
-                  symbols: @sympoltraittrait}
+    search_trait = params[:search_trait]
+      if search_trait
+        @sympol_traits = @sympol_traits.where("trait_id LIKE ?", "%#{search_trait}%")
+      end
+
+    render 'index.json.jbuilder'
   end
 
   def create

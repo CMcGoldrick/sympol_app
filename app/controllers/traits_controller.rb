@@ -3,7 +3,7 @@ class TraitsController < ApplicationController
     @traits = Trait.all
 
     render json: {message: "check out these traits:", 
-                  symbols: @traits}
+                  sympols: @traits}
   end
 
   def create
