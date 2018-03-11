@@ -1,20 +1,32 @@
 class UserFavoritesController < ApplicationController
-  # def update
-  #   @user_favorite = User.find(current_user.id)
+  def index
+    @favorites = UserFavorite.all
 
-  #   @
+    render json: @favorites
+  end
 
+  def create
+    # @current_user = User.find(current_user.id)
 
-  #   if favorite.save
-  #     render json: {message: 'favorite created successfully'}, status: :created
-  #   else
-  #     render json: {errors: user.errors.full_messages}, status: :bad_request
-  #   end
+    @favorite = UserFavorite.new(
+          # user_id: @current_user,
+          user_id: params[:user_id],
+          sympol_id: params[:sympol_id]
+          )
 
-  # end
+    @favorite.save
+
+    render json: {message: "succefully added favorite sympol"}
+  end
+
+  def destroy
+    favorite = UserFavorite.find(params[:id])    
+
+    favorite.destroy
+
+    render json: {message: "Succesfully destroyed that manifestation"}
+  end
 end
-
-
 
 
 

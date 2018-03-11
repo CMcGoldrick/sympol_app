@@ -18,11 +18,23 @@ class SympolsController < ApplicationController
       end
 
     search_trait = params[:search_trait]
-      if search_trait
+      if search_trait 
         trait = Trait.find_by(name: search_trait)
         @sympols = trait.sympols
       end
 
+    search_traits = params[:search_traits]
+      if search_traits
+        individual_traits = search_traits.split(",")
+        trait = Trait.find_by(name: individual_traits[0])
+        @sympols = trait.sympols
+
+        individual_traits[1..-1].each do |individual_trait|
+          trait = Trait.find_by(name: individual_trait)
+          @sympols &= trait.sympols
+        end
+      end
+      
     render 'index.json.jbuilder'   
   end
 

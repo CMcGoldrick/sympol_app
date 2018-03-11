@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   get '/sympols' => 'sympols#index'
-  # get '/sympols/:search_name' => 'sympols#index'
   post '/sympols' => 'sympols#create'
   get '/sympols/:id' => 'sympols#show'
   patch 'sympols/:id' => 'sympols#update'
@@ -26,8 +25,14 @@ Rails.application.routes.draw do
   
   post '/user_token' => 'user_token#create'  
 
-  # patch '/user_favorites' => "user_favorites#update"
+  get 'user_favorites' => 'user_favorites#index'
+  post '/user_favorites' => 'user_favorites#create'
+  delete 'user_favorites/:id' => 'user_favorites#destroy'
 end
+
+
+
+
 
 
 
