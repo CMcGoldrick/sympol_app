@@ -5,8 +5,20 @@ var SympolsIndexPage = {
     return {
       sympols: {
         name: ""
-      }
+      },
+      jumpIndex: ""
     };
+  },
+  methods: {
+    updateIndex: function() {
+      if (this.jumpIndex) {
+        axios.get("/sympols?search_name=" + this.jumpIndex)
+          .then(function(response) {
+            console.log("update");
+            this.sympols = response.data;
+          }.bind(this));
+      }
+    }
   },
   created: function() {
     axios.get("/sympols")
@@ -17,12 +29,13 @@ var SympolsIndexPage = {
 };
 
 
-var SympolsNameSearch = {
-  template: "#name-search-page",
+var SympolSearch = {
+  template: "#search-page",
   data: function() {
     return {
       sympols: [],
       nameFilter: "",
+      originFilter: "",
     }
   },
   created: function() {
@@ -57,7 +70,7 @@ var router = new VueRouter({
   routes: [
             { path: "/sympols/:id", component: SympolsShowPage },
             { path: "/sympols", component: SympolsIndexPage },  
-            { path: "/", component: SympolsNameSearch}  
+            { path: "/", component: SympolSearch}
           ],
   scrollBehavior: function(to, from, savedPosition) {
     return { x: 0, y: 0 };

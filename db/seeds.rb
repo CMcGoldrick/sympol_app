@@ -139,17 +139,49 @@
 #     {user_id: 1, sympol_id: 1},
 #     {user_id: 1, sympol_id: 4},
 #     {user_id: 1, sympol_id: 21},
-
-
 #     {user_id: 2, sympol_id: 1},
 #     {user_id: 2, sympol_id: 3}
 # ])
 
 
+# Trait.create! ([
+#   {name: "straight and curved"},
+#   {name: "rectangle"},
+#   {name: "square"},
+#   {name: "star"},
+#   {name: "cross"},
+#   {name: "single"},
+#   {name: "double"},
+#   {name: "triple"},
+#   {name: "open and closed"}
+# ])
 
+# SympolTrait.create! ([
+    # {sympol_id: 3, trait_id: 12},
+    # {sympol_id: 3, trait_id: 19},
+    # {sympol_id: 3, trait_id: 7},
 
+    # {sympol_id: 1, trait_id: 19},
 
+    # {sympol_id: 4, trait_id: 4},
+    # {sympol_id: 4, trait_id: 9},
+    # {sympol_id: 4, trait_id: 19},
+    # {sympol_id: 4, trait_id: 9},
+    # {sympol_id: 4, trait_id: 7},
+    
+    # {sympol_id: 5, trait_id: 7},
+    # {sympol_id: 5, trait_id: 6},
+    # {sympol_id: 5, trait_id: 4},
+    # {sympol_id: 5, trait_id: 2},
 
+    # {sympol_id: 21, trait_id: 8},
+    # {sympol_id: 21, trait_id: 5},
+    # {sympol_id: 21, trait_id: 4},
+    # {sympol_id: 21, trait_id: 2},
+    # {sympol_id: 21, trait_id: 17}
+  # ])
+
+  
 
 
 
