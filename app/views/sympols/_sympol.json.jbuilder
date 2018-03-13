@@ -5,5 +5,3 @@ json.description sympol.description
 
 json.images sympol.images
 json.traits sympol.traits
-
-# json.traits.name sympol.traits.name

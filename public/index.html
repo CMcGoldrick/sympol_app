@@ -55,7 +55,6 @@
       </div>
     </nav>
 
-
     <!-- Header -->
     <header class="masthead">
       <div class="container">
@@ -72,31 +71,35 @@
           <div class="container">
             <div class="row">
               <div class="col-lg-12 text-center">
-                <h2 class="section-heading text-uppercase">Search by Traits</h2>
-                <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                <h2 class="section-heading text-uppercase">Search our Sympol database here!</h2>
+                <h3 class="section-subheading text-muted">choose one of our search options</h3>
               </div>
             </div>
             <div class="row text-center">
-              <div class="col-md-4">
-                <h4 class="service-heading">Lining</h4>
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+              <div class="col-md-6">
+                <h4 class="service-heading">Search by name</h4>
+                  <!-- Vue app -->
+                  <div id="vue-app">
+                    <router-view></router-view>
+                  </div>
               </div>
-              <div class="col-md-4">
-                <h4 class="service-heading">Symmetry</h4>
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+              <div class="col-md-6">
+                <h4 class="service-heading">Search by Traits</h4>
               </div>
-              <div class="col-md-4">
-                <h4 class="service-heading">Shape</h4>
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+
+              <div class="col-md-6">
+                <h4 class="service-heading">Search by origin</h4>
               </div>
+
+              <div class="col-md-6">
+                <h4 class="service-heading">Search by description</h4>
+              </div>
+            
             </div>
           </div>
         </section>
     
-    <!-- Vue app -->
-    <div id="vue-app">
-      <router-view></router-view>
-    </div>
+
 
     <!-- Footer -->
     <footer>
@@ -157,12 +160,44 @@
 </html>
 
 
-<template id="search-page">
+<template id="name-search-page">
+    <div class="vue-component">
+      <div class="container">
+        <div>
+          Search by Name: <input v-model="nameFilter" list="names">
+
+          <datalist id="names">
+            <option v-for="sympol in sympols">{{ sympol.name }}</option>
+          </datalist>
+        </div>
+      </div>
+    </div>
+</template>
+
+
+<!-- <template id="trait-search-page">
+    <div class="vue-component">
+      <div class="container">
+        <div>
+          Search by Traits: <input v-model="traitFilter" list="traits">
+
+          <datalist id="traits">
+            <option v-for="trait in traits">{{ sympol.name }}</option>
+          </datalist>
+        </div>
+      </div>
+    </div>
+</template> -->
+
+
+<template id="sympols-index-page">
   <div class="vue-component">
-
-    <h1>{{ message }}</h1>
-
-  </div>
+    <div class="container">
+      <div>
+        <h1 v-for= "sympol in sympols"> {{ sympol.name }} </h1>
+      </div> 
+    </div>
+  </div> 
 </template>
 
 
@@ -170,7 +205,7 @@
   <div class="vue-component">
     <div class="container">
       <h1>{{ sympol.name }}</h1>
-      <h4>Description: {{ sympol.description}}</h4>
+      <h4>Description: {{ sympol.description }}</h4>
       <img v-for="image in sympol.images" v-bind:src="image.url" alt="">
     </div>
   </div>  
