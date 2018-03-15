@@ -3,14 +3,52 @@ var SympolsIndexPage = {
   template: "#sympols-index-page",
   data: function() {
     return {
-      sympols: {
-        name: ""
-      },
-      jumpIndex: ""
+      search: false,
+      sympols: [],
+      jumpIndex: "",
+      searchSympol:{},
+
+      symmetry: "",
+      symmetries: [
+            { text: "symmetric", value: "symmetric"},
+            { text: "asymmetric", value: "asymmetric"}],
+
+      border: "",
+      borders: [
+            { text: "open", value: "open"},
+            { text: "closed", value: "closed"},
+            { text: "open and closed", value: "open and closed"}],
+
+      lining: "",
+      linings: [
+            { text: "straight", value: "straight"},
+            { text: "curved", value: "curved"},
+            { text: "straight", value: "straight and curved"}],
+
+      shape: "",
+      shapes: [
+            { text: "circle(s)", value: "circle(s)"},
+            { text: "rectangle(s)", value: "rectangle(s)"},
+            { text: "square(s)", value: "square(s)"},
+            { text: "spiral(s)", value: "spiral(s)"},
+            { text: "knot(s)", value: "knot(s)"},
+            { text: "star(s)", value: "star(s)"},
+            { text: "corss(es)", value: "corss(es)"},
+            ]
+
+        
+
     };
   },
   methods: {
+    // isSearch: function(sympol) {
+    //   this.search = true;
+    //   this.searchSympol = sympol
+    //   console.log(search)
+    //   console.log()
+    // },
     updateIndex: function() {
+      this.search = true;
       if (this.jumpIndex) {
         axios.get("/sympols?search_name=" + this.jumpIndex)
           .then(function(response) {

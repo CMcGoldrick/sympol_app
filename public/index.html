@@ -29,6 +29,8 @@
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
     <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.js"></script>
+
+
     <script src="js/script.js" defer></script>
 
   </head>
@@ -137,7 +139,9 @@
     <!-- Contact form JavaScript -->
     <script src="js/jqBootstrapValidation.js"></script>
 
-
+    <!-- JS -->
+    <script src="js/contact_me.min.js"></script>
+    <script src="js/agency.min.js"></script>
 
   </body>
 
@@ -147,7 +151,7 @@
     <div class="vue-component">
       <div class="container">
        
-        <div class="row">
+<!--         <div class="row">
           <div class="col">
             <div class="name-search">  
               <div>
@@ -165,7 +169,7 @@
            <div class="description-search">  
               <div>
                 Search by Description:
-                <!-- THIS WILL BROWSE DATABASE BASED ON ALL ATTRIBUTES (NAME, DESCRIPTION, TRAITS)  -->
+                THIS WILL BROWSE DATABASE BASED ON ALL ATTRIBUTES (NAME, DESCRIPTION, TRAITS) 
                 <form>
                   <input type = "text">
                 </form>
@@ -186,13 +190,14 @@
                 <button v-on-click="">search</button>
             </div>
           </div>
-        </div>
-
-        <br><br><br>
+        </div> -->
 
         <div class="row">
           <div class="trait-search">
-            <h4>Search by Traits</h1>
+            
+            <h4> Do you know what your sympol looks like? </h4>
+            <br>
+            <h6>Browse our sympol database based on the symbol characteristics: </h6>
 
 <!--               <strong>Origin :</strong>
               THIS WILL BE SEARCHED BASED ON SYMPOL 'ORIGIN' ATTRIBUTE
@@ -212,34 +217,32 @@
                 <option >Native American</option>
               </select> -->
 
-              <strong>Symmetry :</strong>
-              <select v-model="symmetry" size="3">
-                <!-- <option >NONE</option> -->
+<!--               <strong>Symmetry :</strong>
+              <select v-model="symmetry" size="2">
+                <option >NONE</option>
                 <option >symmetric</option>
                 <option >asymetric</option>
               </select>
 
               <strong>Borders :</strong>
-              <select v-model="borders" size="4">
-                <!-- <option >NONE</option> -->
+              <select v-model="borders" size="3">
+                <option >NONE</option>
                 <option >open</option>
                 <option >closed</option>
                 <option >open and closed</option>
               </select>              
 
               <strong>Lining :</strong>
-              <select v-model="lining" size="4">
-                <!-- <option >NONE</option> -->
+              <select v-model="lining" size="3">
+                <option >NONE</option>
                 <option >straight</option>
                 <option >curved</option>
                 <option >straight and curved</option>
               </select>
 
               <strong>Shape :</strong>
-              <select v-model="shape" size="10">
-                <!-- <option >NONE</option> -->
-                <option >open</option>
-                <option >closed</option>
+              <select v-model="shape" size="9">
+                <option >NONE</option>
                 <option >rectangle(s)</option>
                 <option >square(s)</option>
                 <option >circle(s)</option>
@@ -250,31 +253,25 @@
               </select>
 
               <strong>Number :</strong>
-              <select v-model="number" size="11">
-                <!-- <option >NONE</option> -->
-                <option >single</option>
-                <option >double</option>
-                <option >triple</option>
-                <option >quadruple (4)</option>
-                <option >quintuple (5)</option>
-                <option >sextuple (6)</option>
-                <option >septuple (7)</option>
-                <option >octuple (8)</option>
-                <option >nonuple (9)</option>
-                <option >decuple (10)</option>
-              </select>
+              <select v-model="number" list="sympol-names" size="10">              
+                <datalist>
+                  <option >NONE</option>
+                  <option >single</option>
+                  <option >double</option>
+                  <option >triple</option>
+                  <option >quadruple (4)</option>
+                  <option >quintuple (5)</option>
+                  <option >sextuple (6)</option>
+                  <option >septuple (7)</option>
+                  <option >octuple (8)</option>
+                  <option >nonuple (9)</option>
+                  <option >decuple (10)</option>
+                </datalist>
+              </select> -->
 
-              <span>Selected: {{ symmetry }}</span>
+              <!-- <span>Selected: {{ symmetry }}</span> -->
 
-          </div>
-        </div>
-          <br><button> search </button>
 
-          <br><br><br><br><h4>Search by Image</h4>
-
-          <h3>---------------------</h3>
-          <br><br><br><br><br><br><br>
-          <h3>---------------------</h3>
 
       </div>
     </div>
@@ -285,24 +282,62 @@
     <div class="index-style">
       <div class="container">
         <p>Select a sympol</p>
-        <input v-model="jumpIndex" list="sympol-names" v-on:change="updateIndex()">
+          <input v-model="jumpIndex" list="sympol-names" v-on:change="updateIndex()">
 
-        <datalist id="sympol-names">
-          <option v-for="sympol in sympols">{{sympol.name}}</option>
-        </datalist>
-
-        <div v-for="sympol in sympols">
-          <a class="btn btn-primary" v-bind:href="'/#/sympols/' + sympol.id">{{sympol.name}}</a>
-        </div>
-
-<!--         <div>
-          <h1 class="index-style" v-for="sympol in sympols"> {{ sympol.name }} </h1>
-        </div>  -->
-          <!-- <a v-bind:href="'/#/sympols/' + sympol.id" class="btn btn-primary float-right">Search</a> -->
+            <!-- NAME SEARCH -->
+            <datalist  id="sympol-names">
+              <option v-for="sympol in sympols" >{{sympol.name}}</option>
+              <!-- <button class="btn btn-primary">a</button> -->
+            </datalist>         
+              <div v-for="sympol in sympols" v-if="search">
+                <br><br>
+                <a class="btn btn-primary" v-bind:href="'/#/sympols/' + sympol.id"> {{ "search" }}</a>
+              </div>
+              <br><br><br>
       </div>
+
+          <!-- TRAIT SEARCH -->
+            <select v-model="symmetry">
+              <option v-for="symmetry in symmetries" v-bind:value="symmetry.value">
+                {{ symmetry.text }}
+              </option>
+            </select>
+            <span>: {{ symmetry }}</span>
+
+            <select v-model="border">
+              <option v-for="border in borders" v-bind:value="border.value">
+                {{ border.text }}
+              </option>
+            </select>
+            <span>: {{ border }}</span>
+
+            <select v-model="lining">
+              <option v-for="lining in linings" v-bind:value="lining.value">
+                {{ lining.text }}
+              </option>
+            </select>
+            <span>: {{ lining }}</span>
+
+            <select v-model="shape">
+              <option v-for="shape in shapes" v-bind:value="shape.value">
+                {{ shape.text }}
+              </option>
+            </select>
+            <span>: {{ shape }}</span>
+
+            <select v-model="number">
+              <option v-for="number in numbers" v-bind:value="numbers.value">
+                {{ shape.text }}
+              </option>
+            </select>
+            <span>: {{ shape }}</span>
     </div>
   </div> 
+
+
+
 </template>
+
 
 <template id="sympols-show-page">
   <div class="vue-component">
