@@ -3,10 +3,12 @@ var SympolsIndexPage = {
   template: "#sympols-index-page",
   data: function() {
     return {
-      search: false,
+      name_search: false,
       sympols: [],
+      currentSympol: null,
       jumpIndex: "",
-      searchSympol:{},
+      // searchSympol:{},
+      // originIndex: "",
 
       symmetry: "",
       symmetries: [
@@ -33,11 +35,20 @@ var SympolsIndexPage = {
             { text: "spiral(s)", value: "spiral(s)"},
             { text: "knot(s)", value: "knot(s)"},
             { text: "star(s)", value: "star(s)"},
-            { text: "corss(es)", value: "corss(es)"},
-            ]
+            { text: "corss(es)", value: "corss(es)"}],
 
-        
-
+      number: "",
+      numbers: [
+            { text: "single", value: "single"},
+            { text: "double", value: "double"},
+            { text: "triple", value: "triple"},
+            { text: "quadruple (4)", value: "quadruple (4)"},
+            { text: "quintuple (5)", value: "quintuple (5)"},
+            { text: "sextuple (6)", value: "sextuple (6)"},
+            { text: "septuple (7)", value: "septuple (7)"},
+            { text: "octuple (8)", value: "octuple (8)"},
+            { text: "nonuple (9)", value: "nonuple (9)"},
+            { text: "decuple (10)", value: "decuple (10)"}],
     };
   },
   methods: {
@@ -48,14 +59,19 @@ var SympolsIndexPage = {
     //   console.log()
     // },
     updateIndex: function() {
-      this.search = true;
+      this.name_search = true;
       if (this.jumpIndex) {
         axios.get("/sympols?search_name=" + this.jumpIndex)
           .then(function(response) {
-            console.log("update");
+            // console.log("update");
             this.sympols = response.data;
           }.bind(this));
       }
+    },
+    loadCurrentSympol: function(sympol) {
+      axios.get("/sympols/" + sympol.id).then(function(response) {
+          this.currentSympol = response.data;
+      }.bind(this));
     }
   },
   created: function() {
@@ -63,23 +79,6 @@ var SympolsIndexPage = {
       .then(function(response) {
         this.sympols = response.data;
       }.bind(this));
-  },
-};
-
-
-var SympolSearch = {
-  template: "#search-page",
-  data: function() {
-    return {
-      sympols: [],
-      nameFilter: "",
-      originFilter: "",
-    }
-  },
-  created: function() {
-    axios.get("/sympols").then(function(response) {
-      this.sympols = response.data;
-    }.bind(this));
   },
 };
 
@@ -107,15 +106,19 @@ var SympolsShowPage = {
 var router = new VueRouter({
   routes: [
             { path: "/sympols/:id", component: SympolsShowPage },
-            { path: "/sympols", component: SympolsIndexPage },  
-            { path: "/", component: SympolSearch}
-          ],
+            { path: "/", 
+            components: {
+              default: SympolsIndexPage,
+              show: SympolsShowPage 
+            },  
+            }],
   scrollBehavior: function(to, from, savedPosition) {
     return { x: 0, y: 0 };
   }
 });
 
+
 var app = new Vue({
   el: "#vue-app",
-  router: router
+  router: router,
 });
