@@ -79,8 +79,8 @@
                 <h3 class="section-subheading text-muted">choose one of our search options</h3>
               </div>
 
-              <!-- Vue router -->
-              <router-view></router-view>
+                <!-- Vue router -->
+                <router-view></router-view>
               
               </div>
             
@@ -157,11 +157,12 @@
           <!-- NAME SEARCH -->
           <div class="container">
             <p>Search by Symbol name: </p>
-            <input v-model="jumpIndex" list="sympol-names" v-on:change="updateIndex()">
+            <input v-model="nameIndex" list="sympol-names" v-on:change="updateName()">
 
               <datalist  id="sympol-names">
                 <option v-for="sympol in sympols">{{sympol.name}}</option>
-              </datalist>         
+              </datalist>    
+                   
                 <div v-for="sympol in sympols" v-if="name_search">
                   <br><br>
                   <a class="btn btn-primary js-scroll-trigger" href="#show" v-on:click="loadCurrentSympol(sympol)"> Show: {{ sympol.name }}</a>
@@ -172,26 +173,46 @@
                 <br><br>
          
           <!-- ORIGIN SEARCH -->
-<!--           <div class="container">
+          <div class="container">
             <p>Search by Symbol origin: </p>
-            <input v-model="originIndex" list="sympol-origins" v-on:change="originIndex()">
+            <input v-model="originIndex" list="sympol-origins" v-on:change="updateOrigin()">
 
               <datalist id="sympol-origins">
                 <option>Celtic</option>
                 <option>Adinkra</option>
               </datalist>
-            
-          </div>    -->  
+
+              <div v-for="sympol in sympols" v-if="origin_search">
+                <!-- <h6>{{ sympol.name }}</h6> -->
+                <img v-for="image in sympol.images" v-bind:src="image.url" alt="">
+                <a class="btn btn-primary js-scroll-trigger" href="#show" v-on:click="loadCurrentSympol(sympol)"> Show: {{ sympol.name }}</a>
+              </div>
+          </div>     
 
                 <br><br>     
 
           <!-- TRAIT SEARCH -->
           <div class="container">
-            <p>Search by Symbol origin: </p>
-            <select v-model="symmetry">
+            <p>Search by Symbol traits: </p>
+            
+            <select v-model="symmetryIndex" v-on:change="updateSymmetry()">
               <option v-for="symmetry in symmetries" v-bind:value="symmetry.value">
                 {{ symmetry.text }}
               </option>
+
+<!--             <div v-for="sympol in sympols">
+              <h6> {{ sympol.name }} </h6>
+            </div> -->
+
+
+
+            
+
+<!--               <div v-for="sympol in sympols" v-if="symmetry_search">
+                <img v-for="image in sympol.images" v-bind:src="image.url" alt="">
+                <a class="btn btn-primary js-scroll-trigger" href="#show" v-on:click="loadCurrentSympol(sympol)"> Show: {{ sympol.name }}</a>  
+              </div> -->
+
             </select>
             <!-- <span>: {{ symmetry }}</span> -->
 
@@ -217,7 +238,7 @@
             <!-- <span>: {{ shape }}</span> -->
 
             <select v-model="number">
-              <option v-for="number in numbers" v-bind:value="numbers.value">
+              <option v-for="number in numbers" v-bind:value="number.value">
                 {{ number.text }}
               </option>
             </select>

@@ -3,12 +3,16 @@ var SympolsIndexPage = {
   template: "#sympols-index-page",
   data: function() {
     return {
-      name_search: false,
       sympols: [],
       currentSympol: null,
-      jumpIndex: "",
-      // searchSympol:{},
-      // originIndex: "",
+
+      name_search: false,
+      origin_search: false,
+      symmetry_search: false,
+      
+      nameIndex: "",
+      originIndex: "",
+      symmetryIndex: "",
 
       symmetry: "",
       symmetries: [
@@ -51,28 +55,46 @@ var SympolsIndexPage = {
             { text: "decuple (10)", value: "decuple (10)"}],
     };
   },
+
   methods: {
-    // isSearch: function(sympol) {
-    //   this.search = true;
-    //   this.searchSympol = sympol
-    //   console.log(search)
-    //   console.log()
-    // },
-    updateIndex: function() {
+    loadCurrentSympol: function(sympol) {
+      axios.get("/sympols/" + sympol.id).then(function(response) {
+          // console.log("test1")
+          this.currentSympol = response.data;
+          // console.log("test2")
+        }.bind(this));
+    },
+    updateName: function() {
       this.name_search = true;
-      if (this.jumpIndex) {
-        axios.get("/sympols?search_name=" + this.jumpIndex)
+      if (this.nameIndex) {
+        axios.get("/sympols?search_name=" + this.nameIndex)
           .then(function(response) {
             // console.log("update");
             this.sympols = response.data;
           }.bind(this));
       }
     },
-    loadCurrentSympol: function(sympol) {
-      axios.get("/sympols/" + sympol.id).then(function(response) {
-          this.currentSympol = response.data;
-      }.bind(this));
+    updateOrigin: function() {
+      this.origin_search = true;
+      if (this.originIndex) {
+        axios.get("/sympols?search_origin=" + this.originIndex)
+        .then(function(response) {
+          console.log("may day");
+          this.sympols = response.data;
+        }.bind(this));
+      }
+    },
+    updateSymmetry: function() {
+      this.symmetry_search = true;
+      if (this.symmetryIndex) {
+        axios.get("sympols?search_trait=" + this.symmetryIndex)
+        .then(function(response) {
+          console.log("may day");
+          this.sympols = response.data;
+        }.bind(this));
+      }
     }
+
   },
   created: function() {
     axios.get("/sympols")
@@ -106,12 +128,8 @@ var SympolsShowPage = {
 var router = new VueRouter({
   routes: [
             { path: "/sympols/:id", component: SympolsShowPage },
-            { path: "/", 
-            components: {
-              default: SympolsIndexPage,
-              show: SympolsShowPage 
-            },  
-            }],
+            { path: "/", component: SympolsIndexPage},  
+          ],
   scrollBehavior: function(to, from, savedPosition) {
     return { x: 0, y: 0 };
   }
