@@ -194,55 +194,96 @@
           <!-- TRAIT SEARCH -->
           <div class="container">
             <p>Search by Symbol traits: </p>
-            
-            <select v-model="symmetryIndex" v-on:change="updateSymmetry()">
-              <option v-for="symmetry in symmetries" v-bind:value="symmetry.value">
-                {{ symmetry.text }}
-              </option>
 
-<!--             <div v-for="sympol in sympols">
-              <h6> {{ sympol.name }} </h6>
-            </div> -->
+            <!-- search by Symmetry -->
+<!--             <select v-model="symmetryIndex" list="sympol-symmetries" v-on:change="updateSymmetry()">
 
+              <datalist id="sympol-symmetries">
+                <option>symmetric</option>
+                <option>asymmetric</option>
+              </datalist>
 
+            </select>
 
-            
-
-<!--               <div v-for="sympol in sympols" v-if="symmetry_search">
+              <div v-for="sympol in sympols" v-if="symmetry_search">
+                <h6> {{ sympol.name }} </h6>
                 <img v-for="image in sympol.images" v-bind:src="image.url" alt="">
-                <a class="btn btn-primary js-scroll-trigger" href="#show" v-on:click="loadCurrentSympol(sympol)"> Show: {{ sympol.name }}</a>  
+                <a class="btn btn-primary js-scroll-trigger" href="#show" v-on:click="loadCurrentSympol(sympol)"> Show: {{ sympol.name }}</a>
               </div> -->
 
-            </select>
-            <!-- <span>: {{ symmetry }}</span> -->
+            <!-- select Symmetry -->
+            <select v-model="traitSelected" v-on:change="addToSearchTraits()" list="sympol-symmetry">
+              
+              <datalist id="sympol-symmetry">
+                <option>symmetric</option>
+                <option>asymmetric</option>
+              </datalist>
 
-            <select v-model="border">
-              <option v-for="border in borders" v-bind:value="border.value">
-                {{ border.text }}
-              </option>
             </select>
-            <!-- <span>: {{ border }}</span> -->
 
-            <select v-model="lining">
-              <option v-for="lining in linings" v-bind:value="lining.value">
-                {{ lining.text }}
-              </option>
-            </select>
-            <!-- <span>: {{ lining }}</span> -->
+            <!-- select Borders -->
+            <select v-model="traitSelected" v-on:change="addToSearchTraits()" list="sympol-borders">
+              
+              <datalist id="sympol-symmetry">
+                <option>open</option>
+                <option>closed</option>
+                <option>open and closed</option>
+              </datalist>
 
-            <select v-model="shape">
-              <option v-for="shape in shapes" v-bind:value="shape.value">
-                {{ shape.text }}
-              </option>
             </select>
-            <!-- <span>: {{ shape }}</span> -->
 
-            <select v-model="number">
-              <option v-for="number in numbers" v-bind:value="number.value">
-                {{ number.text }}
-              </option>
+            <!-- select Lining -->
+            <select v-model="traitSelected" v-on:change="addToSearchTraits()" list="sympol-linings">
+
+              <datalist id="sympol-linings">
+                <option>straight</option>
+                <option>curved</option>
+                <option>straight and curved</option>
+              </datalist>
+
             </select>
-            <!-- <span>: {{ number }}</span> -->
+
+            <select v-model="traitSelected" v-on:change="addToSearchTraits()" list="sympol-shapes">
+
+              <datalist id="sympol-shapes">
+                <option>circle</option>
+                <option>rectangles</option>
+                <option>square</option>
+                <option>spiral</option>
+                <option>knot</option>
+                <option>star</option>
+                <option>cross</option>
+              </datalist>
+
+            </select>
+
+            <select v-model="traitSelected" v-on:change="addToSearchTraits()" list="sympol-numbers">
+  
+              <datalist id="sympol-numbers">
+                <option>single</option> 
+                <option>double</option>
+                <option>triple</option>
+<!--            <option>quadruple (4)</option>
+                <option>quintuple (5)</option>
+                <option>sextuple (6)</option>
+                <option>septuple (7)</option>
+                <option>octuple (8)</option>
+                <option>nonuple (9)</option>
+                <option>decuple (10)</option> -->
+              </datalist>
+
+            </select>
+
+              <h2>{{searchTraits}}</h2>
+
+              <button v-on:click="updateTrait()">Search</button>
+
+              <div v-for="sympol in sympols" v-if="trait_search">
+                <h6> {{ sympol.name }} </h6>
+                <img v-for="image in sympol.images" v-bind:src="image.url" alt="">
+                <a class="btn btn-primary js-scroll-trigger" href="#show" v-on:click="loadCurrentSympol(sympol)"> Show: {{ sympol.name }}</a>
+              </div>
+              
           </div>
 
           <section id="show">

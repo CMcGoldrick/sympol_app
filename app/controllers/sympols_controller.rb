@@ -25,11 +25,11 @@ class SympolsController < ApplicationController
 
     search_traits = params[:search_traits]
       if search_traits
-        individual_traits = search_traits.split(",")
-        trait = Trait.find_by(name: individual_traits[0])
+        trait = Trait.find_by(name: search_traits[0])
         @sympols = trait.sympols
 
-        individual_traits[1..-1].each do |individual_trait|
+        search_traits[1..-1].each do |individual_trait|
+          p individual_trait
           trait = Trait.find_by(name: individual_trait)
           @sympols &= trait.sympols
         end
