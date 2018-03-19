@@ -8,12 +8,10 @@ var SympolsIndexPage = {
 
       name_search: false,
       origin_search: false,
-      symmetry_search: false,
       trait_search: false,
       
       nameIndex: "",
       originIndex: "",
-      symmetryIndex: "",
 
       traitSelected: "",
       searchTraits: [],
@@ -53,16 +51,6 @@ var SympolsIndexPage = {
         }.bind(this));
       }
     },
-    updateSymmetry: function() {
-      this.symmetry_search = true;
-      if (this.symmetryIndex) {
-        axios.get("sympols?search_trait=" + this.symmetryIndex)
-        .then(function(response) {
-          // console.log("may day");
-          this.sympols = response.data;
-        }.bind(this));
-      }
-    },
     updateTrait: function() {
       this.trait_search = true;
       if (this.searchTraits) {
@@ -83,29 +71,8 @@ var SympolsIndexPage = {
 };
 
 
-var SympolsShowPage = {
-  template: "#sympols-show-page",
-  data: function() {
-    return {
-      sympol: {
-        name: "",
-        description: "",
-        images: [{url: ""}]
-      }
-    }
-  },
-  created: function() {
-  axios.get("/sympols/" + this.$route.params.id )
-    .then(function(response) {
-      this.sympol = response.data;
-    }.bind(this));
-  }
-};
-
-
 var router = new VueRouter({
   routes: [
-            { path: "/sympols/:id", component: SympolsShowPage },
             { path: "/", component: SympolsIndexPage},  
           ],
   scrollBehavior: function(to, from, savedPosition) {

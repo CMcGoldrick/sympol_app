@@ -174,7 +174,7 @@
          
           <!-- ORIGIN SEARCH -->
           <div class="container">
-            <p>Search by Symbol origin: </p>
+            <p>Filter by Symbol origin: </p>
             <input v-model="originIndex" list="sympol-origins" v-on:change="updateOrigin()">
 
               <datalist id="sympol-origins">
@@ -193,23 +193,7 @@
 
           <!-- TRAIT SEARCH -->
           <div class="container">
-            <p>Search by Symbol traits: </p>
-
-            <!-- search by Symmetry -->
-<!--             <select v-model="symmetryIndex" list="sympol-symmetries" v-on:change="updateSymmetry()">
-
-              <datalist id="sympol-symmetries">
-                <option>symmetric</option>
-                <option>asymmetric</option>
-              </datalist>
-
-            </select>
-
-              <div v-for="sympol in sympols" v-if="symmetry_search">
-                <h6> {{ sympol.name }} </h6>
-                <img v-for="image in sympol.images" v-bind:src="image.url" alt="">
-                <a class="btn btn-primary js-scroll-trigger" href="#show" v-on:click="loadCurrentSympol(sympol)"> Show: {{ sympol.name }}</a>
-              </div> -->
+            <p>Filter8 by Symbol traits: </p>
 
             <!-- select Symmetry -->
             <select v-model="traitSelected" v-on:change="addToSearchTraits()" list="sympol-symmetry">
@@ -274,7 +258,7 @@
 
             </select>
 
-              <h2>{{searchTraits}}</h2>
+              <h4>{{searchTraits}}</h4>
 
               <button v-on:click="updateTrait()">Search</button>
 
@@ -283,7 +267,7 @@
                 <img v-for="image in sympol.images" v-bind:src="image.url" alt="">
                 <a class="btn btn-primary js-scroll-trigger" href="#show" v-on:click="loadCurrentSympol(sympol)"> Show: {{ sympol.name }}</a>
               </div>
-              
+
           </div>
 
           <section id="show">
@@ -303,17 +287,6 @@
   </div> 
 </template>
 
-
-<!-- <template id="sympols-show-page">
-  <div class="vue-component">
-    <div class="container">
-      <h1>{{ sympol.name }}</h1>
-      <h4>Description: {{ sympol.description }}</h4>
-      <img v-for="image in sympol.images" v-bind:src="image.url" alt="">
-    </div>
-  </div>   
-</template>
- -->
 
 
 
