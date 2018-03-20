@@ -247,13 +247,6 @@
                 <option>single</option> 
                 <option>double</option>
                 <option>triple</option>
-<!--            <option>quadruple (4)</option>
-                <option>quintuple (5)</option>
-                <option>sextuple (6)</option>
-                <option>septuple (7)</option>
-                <option>octuple (8)</option>
-                <option>nonuple (9)</option>
-                <option>decuple (10)</option> -->
               </datalist>
 
             </select>
@@ -285,6 +278,29 @@
 
     </div>
   </div> 
+</template>
+
+<template id="sympols-post-page">
+  <div class="vue-component">
+
+    <div>
+      <h2>Create a new post:</h2>
+      <div>
+        Name: <input type="text" name="name" v-model="name">
+      </div>
+      <div>
+        Origin: <input type="text" name="origin" v-model="origin">
+      </div>
+      <div>
+        Description: <input type="text" name="description" v-model="description">
+      </div>
+
+      <div>
+        Image: <input type="file" v-on:change="uploadFile($event)">
+      </div>
+    </div>
+
+  </div>
 </template>
 
 

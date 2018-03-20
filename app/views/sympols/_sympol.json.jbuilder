@@ -2,6 +2,7 @@ json.id sympol.id
 json.name sympol.name
 json.origin sympol.origin
 json.description sympol.description
+json.image sympol.image
 
 json.images sympol.images
 json.traits sympol.traits

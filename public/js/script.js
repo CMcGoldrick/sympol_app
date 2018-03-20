@@ -70,10 +70,45 @@ var SympolsIndexPage = {
   },
 };
 
+var SympolsPostPage = {
+  template: "#sympols-post-page",
+  data: function() {
+    return {
+      name: "",
+      origin: "",
+      description: ""
+    };
+  },
+  created: function() {},
+  methods: {
+    uploadFile: function(event) {
+      if (event.target.files.length > 0) {
+        var formData = new FormData();
+        formData.append("name", this.name);
+        formData.append("origin", this.origin);
+        formData.append("description", this.description);
+        formData.append("image", event.target.files[0]);
+
+        axios
+          .post("http://localhost:3000/sympols", formData)
+          .then(function(response) {
+            console.log(response);
+            this.name = "";
+            this.origin = "";
+            this.description = "";
+            event.target.value = "";
+          }.bind(this));
+    }
+  }
+},
+  computed: {}
+};
+
 
 var router = new VueRouter({
   routes: [
             { path: "/", component: SympolsIndexPage},  
+            { path: "/post", component: SympolsPostPage },
           ],
   scrollBehavior: function(to, from, savedPosition) {
     return { x: 0, y: 0 };

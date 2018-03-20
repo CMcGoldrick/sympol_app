@@ -42,7 +42,9 @@ class SympolsController < ApplicationController
     @sympol = Sympol.new(
                           name: params[:name],
                           origin: params[:origin],
-                          description: params[:description])
+                          description: params[:description],
+                          image: params[:image]
+                          )
 
     @sympol.save
 
