@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   get '/sympols/:id' => 'sympols#show'
   patch 'sympols/:id' => 'sympols#update'
   delete 'sympols/:id' => 'sympols#destroy'
+
+  get "/images" => "sympols#image"
+  post "/images" => "sympols#image"
     
   get '/traits' => 'traits#index'
   post '/traits' => 'traits#create'

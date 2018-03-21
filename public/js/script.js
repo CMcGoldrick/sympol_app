@@ -104,11 +104,72 @@ var SympolsPostPage = {
   computed: {}
 };
 
+var SubmitImagePage = {
+  template: "#submit-image-page",
+  data: function() {
+    return {
+      errors: [],
+      urls: []
+    };
+  },
+  methods: {
+    uploadFile: function(event) {
+      if (event.target.files.length > 0) {
+        var formData = new FormData();
+        formData.append("image", event.target.files[0]);
+
+        axios.post("/images", formData).then(
+          function(response) {
+            this.urls = response.data;
+            // console.log(this.urls);
+            event.target.value = "";
+          }.bind(this)
+        );
+      }
+
+      // submit: function() {
+      //   var params = {
+      //     product_link: this.productLink
+      //   };
+      //   axios
+      //     .post("/images", params)
+      //     .then(function(response) {
+      //       router.push("/imageResults");
+      //     })
+      //     .catch(
+      //       function(error) {
+      //         this.errors = error.response.data.errors;
+      //       }.bind(this)
+      //     );
+      // }
+    }
+  }
+};
+
+var ImageResultPage = {
+  template: "#image-result-page",
+  data: function() {
+    return {
+      urls: []
+    };
+  },
+  created: function() {
+    axios.get("/images").then(
+      function(response) {
+        this.urls = response.data;
+      }.bind(this)
+    );
+  },
+  methods: {},
+  computed: {}
+};
 
 var router = new VueRouter({
   routes: [
             { path: "/", component: SympolsIndexPage},  
             { path: "/post", component: SympolsPostPage },
+            { path: "/submitimage", component: SubmitImagePage },
+            { path: "/imageResult", component: ImageResultPage }
           ],
   scrollBehavior: function(to, from, savedPosition) {
     return { x: 0, y: 0 };
