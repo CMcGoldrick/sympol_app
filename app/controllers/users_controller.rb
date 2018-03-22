@@ -11,10 +11,11 @@ class UsersController < ApplicationController
       name: params[:name],
       username: params[:username],
       email: params[:email],
-      # bio: params[:bio],
+      bio: params[:bio],
       password: params[:password],
       password_confirmation: params[:password_confirmation]
-      )
+      ),
+      # image: params[:image]
 
     if user.save
       render json: {message: 'User created successfully'}, status: :created
@@ -41,16 +42,4 @@ class UsersController < ApplicationController
   end
 end
 
-
-
-  # def update  
-  #   @sympol = Sympol.find(params[:id])
-
-  #   @sympol.name = params[:name] || @sympol.name
-  #   @sympol.origin = params[:origin] || @sympol.origin
-  #   @sympol.description = params[:description] || @sympol.description
-
-  #   @sympol.save
-  #   render 'show.json.jbuilder'
-  # end
 

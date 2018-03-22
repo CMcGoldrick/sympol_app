@@ -2,10 +2,7 @@
 # Sympol.create!([
 #     {name: "Triquetra", origin: "Celtic", description: "Latin meaning 'threecornered' It's a holy symbol, and it's meanings are many. It varies in its aspects of spirit, nature, being-ness, and of the cosmos. This trinity symbol, as most others, reflects core concepts such as: Mind, Body, Spirit. Afterlife, Underworld, Physical life. Tribe, Country, Deity (god/goddess). These are just a few trinities folded within this Celtic symbol meaning. There are many more. The differences lay in the intent of the symbol, and the tribe that was using at the time in Celtic history. The negative space in the center of this symbol symbolizes the center of all influences. In personal ritual, it could represent the self at the center of trinity influences. In a tribe, the center is the heart of the people with the three elements creating an unbreakable union."},
 #     {name: "Triskele", origin: "Celtic", description: "This is another trinity symbol often found among ancient Celtic relics. It is sometimes referred to as a triskelion. The terms are often considered synonymous. This Celtic symbol meaning deals with the drawing of the three powers of maiden, mother and crone. It is often considered a sign of female power and especially power through transition and growth. This, however, is not an exclusive definition. Sometimes the symbol represents religious aspects of Father, Son, Holy Ghost. This representation came much later amongst Celtic descendants who were exposed to Christian conversion. In any instance, this trinity symbol can represent a triangle of foundational necessity. Meaning - you cannot have a healthy whole without all three elements joined together. Hence: Mind, Body, Spirit. Sun, Moon, Earth. Light, Dark, Gloaming (twilight). Not one energy can exist without the others."},
-#     {name: "Awen", origin: "Celtic", description: "This is the three rays, or three flames symbol - also known as the Awen. The first and third rays in this symbol represent male and female energy (respectively). The middle ray represents the balance of both energies. At its heart, this symbol expresses the constant theme of the trinity. Threes are a massive influence amongst the Celtic people. Mostly, because it is clear there cannot be balance, or a whole unit without the union of three core energies. For example: Male, Female, Offspring. God, Goddess, (Hu)Man. Creating, Destroying, Sustaining. Past, Present, Future. The ancient Celts used the Awen as a symbol for transformation experienced through the power of fire. If the Celtic Awen symbol could speak, it might say: 'I was a certain entity. Fire burned and changed me. Now I am completely transformed.'"}
-#   ])
-
-# Sympol.create!([
+#     {name: "Awen", origin: "Celtic", description: "This is the three rays, or three flames symbol - also known as the Awen. The first and third rays in this symbol represent male and female energy (respectively). The middle ray represents the balance of both energies. At its heart, this symbol expresses the constant theme of the trinity. Threes are a massive influence amongst the Celtic people. Mostly, because it is clear there cannot be balance, or a whole unit without the union of three core energies. For example: Male, Female, Offspring. God, Goddess, (Hu)Man. Creating, Destroying, Sustaining. Past, Present, Future. The ancient Celts used the Awen as a symbol for transformation experienced through the power of fire. If the Celtic Awen symbol could speak, it might say: 'I was a certain entity. Fire burned and changed me. Now I am completely transformed.'"},
 #     {name: "Celtic Cross", origin: "Celtic", description: "As one of the most common Celtic symbols, the Celtic cross is of significant cultural and religious importance. There are many theories regarding the origin of the symbol although none of them could be (and possibly never will be) confirmed. The most common theory suggests that Saint Patrick (or Saint Declan) created the symbol to convert pagans/the Druids. Realizing the importance of the sun and its life-giving power to pagans, Saint Patrick decided to combine the Christian cross with the Celtic circle representing eternity."},
 #     {name: "Claddagh", origin: "Celtic", description: "The meaning of the claddagh ring is what gives the ring it's significance. Over the years the cladagh ring has brought up designs with minor variations, the basic meaning and significance of the Irish claddagh ring has however been retained. The hands of the ring are shown holding the heart and the hands denote friendship and togetherness, the heart itself signifies love and the crown in the claddagh ring stands for loyalty. It is this meaning of the claddagh rings that make them an ideal choice for all occassions, wedding rings, birth stone rings, engagement rings, mothers day rings and rings for just about any other occassion. The deep and true meaning of the Irish claddagh rings has also put them into a group of rings referred to as the faith rings. In today's materialistic world where love, friendship and loyalty are becoming increasingly rarer by the day, the claddagh ring with it's realistic and worthy meaning makes an ideal gift to give and to receive."},
 #     {name: "Carolingian Cross", origin: "Celtic", description: "Made of four triquetrae/triquetras, Carolingian cross is a symbol most commonly used by the Carolingian Dynasty of France (the dynasty of Charlemagne / Charles the Great ). It represents unity, balance and the eternity of God."},
@@ -96,45 +93,316 @@
 #     {name: 'Wo Nsa Da Mu A', origin: 'Adinkra', description: '"If your hands are in the dish" - symbol of participatory government, democracy and pluralism. From the aphorism, "Wo nsa da mu a, wonni nnya wo" -- "If your hands are in the dish, people do not eat everything and leave you nothing."'},
 #   ])
 
-
-# Trait.create!([
-#   {name: "circle"},
-#   {name: "straight"},
-#   {name: "curved"},
-#   {name: "open"},
-#   {name: "closed"},
-#   {name: "symmetric"},
-#   {name: "asymmetric"},
-#   {name: "spiral"},
-#   {name: "knot"},
-# ])
-
-# SympolTrait.create!([
-#   {sympol_id: 1, trait_id: 4},
-#   {sympol_id: 1, trait_id: 6},
-#   {sympol_id: 1, trait_id: 7},
-#   {sympol_id: 1, trait_id: 10},
-
-
-#   {sympol_id: 2, trait_id: 1},
-#   {sympol_id: 2, trait_id: 4},
-#   {sympol_id: 2, trait_id: 5},
-#   {sympol_id: 2, trait_id: 7},
-#   {sympol_id: 2, trait_id: 8},
-
-
-#   {sympol_id: 3, trait_id: 2},
-#   {sympol_id: 3, trait_id: 6},
-# ])
-
 # Image.create!([
-#     {url: "/images/Celtic/Triquetra.jpg", sympol_id: 1},
+#     {url: "/images/Celtic/Triquetra.png", sympol_id: 1},
 #     {url: "/images/Celtic/Triskele.jpg", sympol_id: 2},
 #     {url: "/images/Celtic/Awen.jpg", sympol_id: 3},
-#     {url: "/images/Celtic/Triskelion.jpg", sympol_id: 4},
-#     {url: "/images/Celtic/Celtic_Five_Fold.jpg", sympol_id: 5},
-#     {url: "/images/Celtic/Celtic_Spiral.jpg", sympol_id: 21},
+#     {url: "/images/Celtic/celtic_cross.jpg", sympol_id: 4},
+#     {url: "/images/Celtic/claddagh.jpg", sympol_id: 5},
+#     {url: "/images/Celtic/carolingian_cross.jpg", sympol_id: 6},
+#     {url: "/images/Celtic/tree_of_life.jpg", sympol_id: 7},
+#     {url: "/images/Celtic/eternity_knot.jpg", sympol_id: 8},
+#     {url: "/images/Celtic/st_bridig_cross.jpg", sympol_id: 9},
+#     {url: "/images/Celtic/harp.jpg", sympol_id: 10},
+#     {url: "/images/Celtic/bythol.jpg", sympol_id: 11},
+#     {url: "/images/Celtic/shamrock.png", sympol_id: 12},
+#     {url: "/images/Celtic/celtic_hounds.png", sympol_id: 13},
+#     {url: "/images/Celtic/celtic_salmon.jpg", sympol_id: 14},
+#     {url: "/images/Celtic/sheela.jpg", sympol_id: 15},
+#     {url: "/images/Celtic/cerne_abbas_giant.jpg", sympol_id: 16},
+#     {url: "/images/Celtic/cernunnos.jpg", sympol_id: 17},
+#     {url: "/images/Celtic/celtic_greenman.jpg", sympol_id: 18},
+#     {url: "/images/Celtic/celtic_bull.png", sympol_id: 19},
+#     {url: "/images/Celtic/celtic_boar.png", sympol_id: 20},
+#     {url: "/images/Celtic/celtic_serpent.jpg", sympol_id: 21},
+#     {url: "/images/Celtic/celtic_dragon.jpg", sympol_id: 22},
+#     {url: "/images/Celtic/celtic_snake.jpg", sympol_id: 23},
+#     {url: "/images/Celtic/celtic_deer.jpg", sympol_id: 24},
+#     {url: "/images/Celtic/celtic_raven.png", sympol_id: 25},
+#     {url: "/images/Celtic/celtic_swan.png", sympol_id: 26},
+#     {url: "/images/Celtic/celtic_crane.jpg", sympol_id: 27},
+#     {url: "/images/Celtic/celtic_arrow.jpg", sympol_id: 28},
+#     {url: "/images/Celtic/Griffin.jpeg", sympol_id: 29},
+#     {url: "/images/Celtic/celtic_horse.png", sympol_id: 30},
+
+#     {url: "/images/Adinkra/adinkrahene.gif", sympol_id: 31},
+#     {url: "/images/Adinkra/akoben.gif", sympol_id: 32},
+#     {url: "/images/Adinkra/akofena.gif", sympol_id: 33},
+#     {url: "/images/Adinkra/akoko_nan.gif", sympol_id: 34},
+#     {url: "/images/Adinkra/akoma.gif", sympol_id: 35},
+#     {url: "/images/Adinkra/akoma_ntoso.gif", sympol_id: 36},
+#     {url: "/images/Adinkra/ananse_ntotan.gif", sympol_id: 37},
+#     {url: "/images/Adinkra/asase_ye_duru.gif", sympol_id: 38},
+#     {url: "/images/Adinkra/aya.gif", sympol_id: 39},
+#     {url: "/images/Adinkra/bese_saka.gif", sympol_id: 40},
+#     {url: "/images/Adinkra/bi_nka_bi.gif", sympol_id: 41},
+#     {url: "/images/Adinkra/BOA_ME_NA_ME_MMOA_WO.gif", sympol_id: 42},
+#     {url: "/images/Adinkra/dame-dame.gif", sympol_id: 43},
+#     {url: "/images/Adinkra/duafe.gif", sympol_id: 44},
+#     {url: "/images/Adinkra/dwennimmen.gif", sympol_id: 45},
 # ])
+
+
+# SympolTrait.create!([
+#   {sympol_id: 1, trait_id: 1},
+#   {sympol_id: 1, trait_id: 4},
+#   {sympol_id: 1, trait_id: 7},
+#   {sympol_id: 1, trait_id: 13},
+#   {sympol_id: 1, trait_id: 26},
+#   {sympol_id: 1, trait_id: 18},
+
+#   {sympol_id: 2, trait_id: 2},
+#   {sympol_id: 2, trait_id: 4},
+#   {sympol_id: 2, trait_id: 6},
+#   {sympol_id: 2, trait_id: 12},
+#   {sympol_id: 2, trait_id: 18},
+
+#   {sympol_id: 3, trait_id: 1},
+#   {sympol_id: 3, trait_id: 5},
+#   {sympol_id: 3, trait_id: 7},
+#   {sympol_id: 3, trait_id: 9},
+#   {sympol_id: 3, trait_id: 16},
+#   {sympol_id: 3, trait_id: 18},
+
+#   {sympol_id: 4, trait_id: 2},
+#   {sympol_id: 4, trait_id: 5},
+#   {sympol_id: 4, trait_id: 7},
+#   {sympol_id: 4, trait_id: 15},
+#   {sympol_id: 4, trait_id: 16},
+
+#   {sympol_id: 5, trait_id: 1},
+#   {sympol_id: 5, trait_id: 4},
+#   {sympol_id: 5, trait_id: 7},
+
+#   {sympol_id: 6, trait_id: 1},
+#   {sympol_id: 6, trait_id: 4},
+#   {sympol_id: 6, trait_id: 7},
+#   {sympol_id: 6, trait_id: 13},
+#   {sympol_id: 6, trait_id: 19},
+#   {sympol_id: 6, trait_id: 20},
+
+#   {sympol_id: 7, trait_id: 2},
+#   {sympol_id: 7, trait_id: 4},
+#   {sympol_id: 7, trait_id: 8},
+#   {sympol_id: 7, trait_id: 9},
+#   {sympol_id: 7, trait_id: 16},
+  
+#   {sympol_id: 8, trait_id: 2},
+#   {sympol_id: 8, trait_id: 4},
+#   {sympol_id: 8, trait_id: 7},
+#   {sympol_id: 8, trait_id: 13},
+#   {sympol_id: 8, trait_id: 16},
+  
+#   {sympol_id: 9, trait_id: 2},
+#   {sympol_id: 9, trait_id: 4},
+#   {sympol_id: 9, trait_id: 7},
+#   {sympol_id: 9, trait_id: 15},
+#   {sympol_id: 9, trait_id: 16},
+#   {sympol_id: 9, trait_id: 19},
+
+#   {sympol_id: 10, trait_id: 2},
+#   {sympol_id: 10, trait_id: 5},
+#   {sympol_id: 10, trait_id: 7},
+#   {sympol_id: 10, trait_id: 26},
+  
+#   {sympol_id: 11, trait_id: 1},
+#   {sympol_id: 11, trait_id: 4},
+#   {sympol_id: 11, trait_id: 7},
+#   {sympol_id: 11, trait_id: 13},
+#   {sympol_id: 11, trait_id: 17},
+
+#   {sympol_id: 12, trait_id: 1},
+#   {sympol_id: 12, trait_id: 4},
+#   {sympol_id: 12, trait_id: 7},
+#   {sympol_id: 12, trait_id: 19},  
+
+#   {sympol_id: 13, trait_id: 2},  
+#   {sympol_id: 13, trait_id: 4},  
+#   {sympol_id: 13, trait_id: 7},  
+#   {sympol_id: 13, trait_id: 9},  
+#   {sympol_id: 13, trait_id: 18},  
+
+#   {sympol_id: 14, trait_id: 2},  
+#   {sympol_id: 14, trait_id: 4},  
+#   {sympol_id: 14, trait_id: 7},  
+#   {sympol_id: 14, trait_id: 13},  
+
+#   {sympol_id: 15, trait_id: 2},  
+#   {sympol_id: 15, trait_id: 4},  
+#   {sympol_id: 15, trait_id: 6},  
+  
+#   {sympol_id: 16, trait_id: 2},  
+#   {sympol_id: 16, trait_id: 4},  
+
+#   {sympol_id: 17, trait_id: 2},  
+#   {sympol_id: 17, trait_id: 4},
+
+#   {sympol_id: 18, trait_id: 1}, 
+#   {sympol_id: 18, trait_id: 4}, 
+#   {sympol_id: 18, trait_id: 7},
+
+#   {sympol_id: 19, trait_id: 2},
+#   {sympol_id: 19, trait_id: 4},
+#   {sympol_id: 19, trait_id: 6},
+
+#   {sympol_id: 20, trait_id: 2},
+#   {sympol_id: 20, trait_id: 4},
+#   {sympol_id: 20, trait_id: 6},
+
+#   {sympol_id: 21, trait_id: 2},
+#   {sympol_id: 21, trait_id: 4},
+#   {sympol_id: 21, trait_id: 13},
+
+#   {sympol_id: 22, trait_id: 2},
+#   {sympol_id: 22, trait_id: 4},
+#   {sympol_id: 22, trait_id: 7},
+#   {sympol_id: 22, trait_id: 13},
+
+#   {sympol_id: 23, trait_id: 2},
+#   {sympol_id: 23, trait_id: 4},
+#   {sympol_id: 23, trait_id: 9},
+#   {sympol_id: 23, trait_id: 12},
+
+#   {sympol_id: 24, trait_id: 2},
+#   {sympol_id: 24, trait_id: 4},
+  
+#   {sympol_id: 25, trait_id: 2},
+#   {sympol_id: 25, trait_id: 4},
+
+#   {sympol_id: 26, trait_id: 2},
+#   {sympol_id: 26, trait_id: 4},
+#   {sympol_id: 26, trait_id: 13},
+
+#   {sympol_id: 27, trait_id: 2},
+#   {sympol_id: 27, trait_id: 4},
+#   {sympol_id: 27, trait_id: 13},
+
+#   {sympol_id: 28, trait_id: 1},
+#   {sympol_id: 28, trait_id: 4},
+#   {sympol_id: 28, trait_id: 7},
+#   {sympol_id: 28, trait_id: 13},
+
+#   {sympol_id: 29, trait_id: 2},
+#   {sympol_id: 29, trait_id: 4},
+
+#   {sympol_id: 30, trait_id: 2},
+#   {sympol_id: 30, trait_id: 4},
+#   {sympol_id: 30, trait_id: 13},
+
+
+  
+#   {sympol_id: 31, trait_id: 1},
+#   {sympol_id: 31, trait_id: 4},
+#   {sympol_id: 31, trait_id: 7},
+#   {sympol_id: 31, trait_id: 9},
+#   {sympol_id: 31, trait_id: 18},
+
+#   {sympol_id: 32, trait_id: 2},
+#   {sympol_id: 32, trait_id: 4},
+#   {sympol_id: 32, trait_id: 12},
+
+#   {sympol_id: 33, trait_id: 1},
+#   {sympol_id: 33, trait_id: 4},
+#   {sympol_id: 33, trait_id: 7},
+
+#   {sympol_id: 34, trait_id: 1},
+#   {sympol_id: 34, trait_id: 4},
+#   {sympol_id: 34, trait_id: 17},
+
+#   {sympol_id: 35, trait_id: 1},
+#   {sympol_id: 35, trait_id: 4},
+#   {sympol_id: 35, trait_id: 7},
+
+#   {sympol_id: 36, trait_id: 1},
+#   {sympol_id: 36, trait_id: 4},
+#   {sympol_id: 36, trait_id: 15},
+#   {sympol_id: 36, trait_id: 4},
+
+#   {sympol_id: 37, trait_id: 1},
+#   {sympol_id: 37, trait_id: 5},
+#   {sympol_id: 37, trait_id: 14},
+#   {sympol_id: 37, trait_id: 22},
+
+#   {sympol_id: 38, trait_id: 1},
+#   {sympol_id: 38, trait_id: 4},
+#   {sympol_id: 38, trait_id: 7},
+#   {sympol_id: 38, trait_id: 17},
+
+#   {sympol_id: 39, trait_id: 1},
+#   {sympol_id: 39, trait_id: 4},
+#   {sympol_id: 39, trait_id: 8},
+
+#   {sympol_id: 40, trait_id: 1},
+#   {sympol_id: 40, trait_id: 5},
+#   {sympol_id: 40, trait_id: 11},
+#   {sympol_id: 40, trait_id: 15},
+#   {sympol_id: 40, trait_id: 19},
+
+#   {sympol_id: 41, trait_id: 1},
+#   {sympol_id: 41, trait_id: 4},
+#   {sympol_id: 41, trait_id: 7},
+
+#   {sympol_id: 42, trait_id: 2},
+#   {sympol_id: 42, trait_id: 5},
+#   {sympol_id: 42, trait_id: 7},
+
+#   {sympol_id: 43, trait_id: 1},
+#   {sympol_id: 43, trait_id: 5},
+#   {sympol_id: 43, trait_id: 7},
+#   {sympol_id: 43, trait_id: 9},
+#   {sympol_id: 43, trait_id: 11},
+#   {sympol_id: 43, trait_id: 15},
+
+#   {sympol_id: 44, trait_id: 1},
+#   {sympol_id: 44, trait_id: 5},
+#   {sympol_id: 44, trait_id: 8},
+#   {sympol_id: 44, trait_id: 21},
+
+#   {sympol_id: 45, trait_id: 2},
+#   {sympol_id: 45, trait_id: 4},
+#   {sympol_id: 45, trait_id: 8},
+#   {sympol_id: 45, trait_id: 12},
+#   {sympol_id: 45, trait_id: 15},
+#   {sympol_id: 45, trait_id: 19},
+# ])
+
+# Trait.create!([
+#   1  {name: "symmetric"},
+#   2  {name: "asymmetric"},
+
+#   3  {name: "straight"},
+#   4  {name: "curved"},
+#   5  {name: "straight and curved"},
+
+#   6  {name: "open"},
+#   7  {name: "closed"},
+#   8  {name: "open and closed"},
+
+#   9 {name: "circle"},
+#   10 {name: "rectangle"},
+#   11 {name: "square"},
+#   12 {name: "spiral"},
+#   13 {name: "knot"},
+#   14 {name: "star"},
+#   15 {name: "cross"},
+#   26 {name: "triangle"},
+
+#   16 {name: "single"},
+#   17 {name: "double"},
+#   18 {name: "triple"},
+#   19 {name: "quadruple (4)"},
+#   20 {name: "quintuple (5)"},
+#   21 {name: "sextuple (6)"},
+#   22 {name: "septuple (7)"},
+#   23 {name: "octuple (8)"},
+#   24 {name: "nonuple (9)"},
+#   25 {name: "decuple (10)"},
+
+# ])
+
+
+
+
 
 # UserFavorite.create! ([
 #     {user_id: 1, sympol_id: 1},
@@ -145,100 +413,7 @@
 # ])
 
 
-# Trait.create! ([
-#   {name: "straight and curved"},
-#   {name: "rectangle"},
-#   {name: "square"},
-#   {name: "star"},
-#   {name: "cross"},
-#   {name: "single"},
-#   {name: "double"},
-#   {name: "triple"},
-#   {name: "open and closed"}
-# ])
 
-# SympolTrait.create! ([
-#     {sympol_id: 3, trait_id: 12},
-#     {sympol_id: 3, trait_id: 19},
-#     {sympol_id: 3, trait_id: 7},
-
-#     {sympol_id: 1, trait_id: 19},
-
-#     {sympol_id: 4, trait_id: 4},
-#     {sympol_id: 4, trait_id: 9},
-#     {sympol_id: 4, trait_id: 19},
-#     {sympol_id: 4, trait_id: 9},
-#     {sympol_id: 4, trait_id: 7},
-    
-#     {sympol_id: 5, trait_id: 7},
-#     {sympol_id: 5, trait_id: 6},
-#     {sympol_id: 5, trait_id: 4},
-#     {sympol_id: 5, trait_id: 2},
-
-#     {sympol_id: 21, trait_id: 8},
-#     {sympol_id: 21, trait_id: 5},
-#     {sympol_id: 21, trait_id: 4},
-#     {sympol_id: 21, trait_id: 2},
-#     {sympol_id: 21, trait_id: 17}
-#   ])
-
-  
-      # HEROKU
-
-Sympol.create!([
-    {name: "Triquetra", origin: "Celtic", description: "Latin meaning 'threecornered' It's a holy symbol, and it's meanings are many. It varies in its aspects of spirit, nature, being-ness, and of the cosmos. This trinity symbol, as most others, reflects core concepts such as: Mind, Body, Spirit. Afterlife, Underworld, Physical life. Tribe, Country, Deity (god/goddess). These are just a few trinities folded within this Celtic symbol meaning. There are many more. The differences lay in the intent of the symbol, and the tribe that was using at the time in Celtic history. The negative space in the center of this symbol symbolizes the center of all influences. In personal ritual, it could represent the self at the center of trinity influences. In a tribe, the center is the heart of the people with the three elements creating an unbreakable union."},
-    {name: "Triskele", origin: "Celtic", description: "This is another trinity symbol often found among ancient Celtic relics. It is sometimes referred to as a triskelion. The terms are often considered synonymous. This Celtic symbol meaning deals with the drawing of the three powers of maiden, mother and crone. It is often considered a sign of female power and especially power through transition and growth. This, however, is not an exclusive definition. Sometimes the symbol represents religious aspects of Father, Son, Holy Ghost. This representation came much later amongst Celtic descendants who were exposed to Christian conversion. In any instance, this trinity symbol can represent a triangle of foundational necessity. Meaning - you cannot have a healthy whole without all three elements joined together. Hence: Mind, Body, Spirit. Sun, Moon, Earth. Light, Dark, Gloaming (twilight). Not one energy can exist without the others."},
-    {name: "Awen", origin: "Celtic", description: "This is the three rays, or three flames symbol - also known as the Awen. The first and third rays in this symbol represent male and female energy (respectively). The middle ray represents the balance of both energies. At its heart, this symbol expresses the constant theme of the trinity. Threes are a massive influence amongst the Celtic people. Mostly, because it is clear there cannot be balance, or a whole unit without the union of three core energies. For example: Male, Female, Offspring. God, Goddess, (Hu)Man. Creating, Destroying, Sustaining. Past, Present, Future. The ancient Celts used the Awen as a symbol for transformation experienced through the power of fire. If the Celtic Awen symbol could speak, it might say: 'I was a certain entity. Fire burned and changed me. Now I am completely transformed.'"}
-  ])
-
-Trait.create! ([
-    {name: "symmetric"},
-    {name: "asymmetric"},
-    {name: "open"},
-    {name: "closed"},
-    {name: "open and closed"},
-    {name: "straight"},
-    {name: "curved"},
-    {name: "straight and curved"},
-    {name: "circle"},
-    {name: "rectangle"},
-    {name: "square"},
-    {name: "spiral"},
-    {name: "knot"},
-    {name: "star"},
-    {name: "cross"},
-    {name: "single"},
-    {name: "double"},
-    {name: "triple"}
-  ])
-
-SympolTrait.create!([
-  {sympol_id: 1, trait_id: 7},
-  {sympol_id: 1, trait_id: 4},
-  {sympol_id: 1, trait_id: 1},
-  {sympol_id: 1, trait_id: 13},
-  {sympol_id: 1, trait_id: 18},
-
-
-  {sympol_id: 2, trait_id: 2},
-  {sympol_id: 2, trait_id: 3},
-  {sympol_id: 2, trait_id: 7},
-  {sympol_id: 2, trait_id: 12},
-  {sympol_id: 2, trait_id: 3},
-
-
-  {sympol_id: 3, trait_id: 1},
-  {sympol_id: 3, trait_id: 4},
-  {sympol_id: 3, trait_id: 8},
-  {sympol_id: 3, trait_id: 9},
-  {sympol_id: 3, trait_id: 16},
-])
-
-Image.create!([
-    {url: "/images/Celtic/Triquetra.jpg", sympol_id: 1},
-    {url: "/images/Celtic/Triskele.jpg", sympol_id: 2},
-    {url: "/images/Celtic/Awen.jpg", sympol_id: 3}
-])
 
 
 

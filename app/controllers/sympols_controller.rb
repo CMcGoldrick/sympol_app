@@ -1,3 +1,6 @@
+    require "google/cloud/vision"
+    require "google/cloud/storage"
+
 class SympolsController < ApplicationController
   def index
     @sympols = Sympol.all
@@ -75,11 +78,7 @@ class SympolsController < ApplicationController
     render json: {message: "Succesfully destroyed sympol ##{sympol.id}"}
   end
 
-
-# Perhaps this goes in the images_controller?
   def image
-    require "google/cloud/vision"
-    require "google/cloud/storage"
 
     project_id = "stoked-summer-197902"
     key_file = "/Users/ciaranfrancismcgoldrick/gcf_ocr/Sympol-280d9d23de05.json"
@@ -87,10 +86,18 @@ class SympolsController < ApplicationController
     storage = Google::Cloud::Storage.new project: project_id, keyfile: key_file 
 
     vision = Google::Cloud::Vision.new project: project_id, keyfile: key_file
+    
+    # LABEL SEARCH
+    # image_path = params[:image]
+    # image  = vision.image image_path
 
-      # The name of the image file to annotate
-      # file_name = "/Users/Allen/Downloads/cup.jpeg"
-      # image_path = "/Users/Allen/Downloads/cup.jpeg"
+    # @image_descriptions = image.labels.map do |label|
+    #   label.description
+    # end
+
+    # render json: @image_descriptions
+
+      # IMAGE SEARCH
       image_path = params[:image]
       image  = vision.image image_path
       web = image.web
@@ -103,16 +110,7 @@ class SympolsController < ApplicationController
         index += 1 
       end
 
-      # pp web.full_matching_images
-      # p "__________________-_______"
-      # pp web.partial_matching_images
-
-
       render json: web_links
-
-      # puts web.methods
-      # Performs label detection on the image file
-      # web = vision.image(file_name).labels
   end
 end
 
