@@ -2,12 +2,28 @@ img {
   height: 220px;
 }
 
+/*.container {
+  padding-bottom: 50px;
+}*/
 
-* {
-  font-family: 'Arial';
-  font-size: 12px;
+
+
+#search {
+  padding-bottom: 800px;
+  /*background-image: url("intersection.png");*/
 }
 
+#trait-search {
+  padding-bottom: 800px;
+  background-image: url("intersection.png");
+}
+
+#show {
+  margin-top: 500px;
+  padding-bottom: 500px;
+}
+
+/*CAME WITH DRAG AND DROP FUNCTIONALITY*/
 *,
 *:after,
 *:before {
@@ -24,7 +40,7 @@ html, body {
 }
 
 .btn {
-  background-color: #d3394c;
+  background-color: #EDA950;
   border: 0;
   color: #fff;
   cursor: pointer;
@@ -32,10 +48,13 @@ html, body {
   font-weight: bold;
   padding: 15px 35px;
   position: relative;
+  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  text-align: center;
 }
 
 .btn:hover {
-  background-color: #722040;
+  background-color: black;
 }
 
 input[type="file"] {

@@ -134,7 +134,7 @@
           <div class="container">
             <div class="intro-text">
               <div class="intro-lead-in">Welcome to Sympol<div>
-                <div class="intro-heading text-uppercase">symbol searching made simple</div>
+                <div class="intro-heading text-uppercase">Ancient symbol searching made simple</div>
                 <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#search"> start searching!</a>                    
             </div>
           </div> 
@@ -147,7 +147,7 @@
         <div class="row">
           <div class="col-lg-12 text-center">
             <h2 class="section-heading text-uppercase">Search our Sympol database here!</h2>
-            <h3 class="section-subheading text-muted">choose one of our search options</h3>
+            <h3 class="section-subheading text-muted">Can't find your sympol? Try searching based on characteristics:   <a class="btn-lg js-scroll-trigger" href="#trait-search"> Go! </a></h3>
                    
                 <div class="row">  
                     <!-- NAME SEARCH -->
@@ -159,7 +159,7 @@
                         <datalist  id="sympol-names">
                           <option v-for="sympol in sympols">{{sympol.name}}</option>
                         </datalist>
-                        
+
                     </div>
                   </div>
                           <br><br>
@@ -177,7 +177,6 @@
 
                     </div> 
                   </div>    
-
                           <br><br>
 
                   <!-- DESCRIPTION SEARCH      -->
@@ -185,97 +184,124 @@
                     <div class="container">
                       <p>Filter by Symbol description: </p>
                       <input v-model="descriptionIndex" v-on:change="updateDescription()">
-
                     </div>
                   </div>
-
-                  <!-- TRAIT SEARCH -->
-                  <div class="container">
-                    <p>Filter by Symbol traits: </p>
-
-                    <button v-model="traitSelected" v-on:change="addToSearchTraits()"> symmetric </button>
-                    <button v-model="traitSelected" v-on:change="addToSearchTraits()"> asymmetric </button>
-
-                    <!-- select Symmetry -->
-                    <select v-model="traitSelected" v-on:change="addToSearchTraits()" list="sympol-symmetry">
-                      <datalist id="sympol-symmetry">
-                        <option>symmetric</option>
-                        <option>asymmetric</option>
-                      </datalist>
-                    </select>
-
-                    <!-- select Lining -->
-                    <select v-model="traitSelected" v-on:change="addToSearchTraits()" list="sympol-linings">
-                      <datalist id="sympol-linings">
-                        <option>straight</option>
-                        <option>curved</option>
-                        <option>straight and curved</option>
-                      </datalist>
-                    </select>
-
-                    <!-- select Borders -->
-                    <select v-model="traitSelected" v-on:change="addToSearchTraits()" list="sympol-borders"> 
-                      <datalist id="sympol-symmetry">
-                        <option>open</option>
-                        <option>closed</option>
-                        <option>open and closed</option>
-                      </datalist>
-                    </select>
-
-                    <!-- select Shape -->
-                    <select v-model="traitSelected" v-on:change="addToSearchTraits()" list="sympol-shapes">
-                      <datalist id="sympol-shapes">
-                        <option>circle</option>
-                        <option>triangle</option>
-                        <option>rectangles</option>
-                        <option>square</option>
-                        <option>spiral</option>
-                        <option>knot</option>
-                        <option>star</option>
-                        <option>cross</option>
-                      </datalist>
-                    </select>
-                    
-                    <!-- select number -->
-                    <select v-model="traitSelected" v-on:change="addToSearchTraits()" list="sympol-numbers">
-                      <datalist id="sympol-numbers">
-                        <option>single</option> 
-                        <option>double</option>
-                        <option>triple</option>
-                        <option>quadruple (4)</option>
-                        <option>quintuple (5)</option>
-                        <option>sextuple (6)</option>
-                        <option>septuple (7)</option>
-                        <option>octuple (8)</option>
-                        <option>nonuple (9)</option>
-                        <option>decuple (10)</option>
-                      </datalist>
-                    </select>
-
-                      <h4>{{searchTraits}}</h4>
-
-                      <button v-on:click="updateTrait()">Search</button>
                       
                       <!-- name search -->
-                      <div v-for="sympol in sympols" v-if="name_search">
-                        <a class="btn js-scroll-trigger" href="#show" v-on:click="loadCurrentSympol(sympol)"><img v-for="image in sympol.images" v-bind:src="image.url" alt=""></a>  
+
+                    <div class="search-results">
+
+                      <div class="row">
+                        <div class="col-md-4" v-for="sympol in sympols" v-if="name_search">
+                          <a class="btn js-scroll-trigger" href="#show" v-on:click="loadCurrentSympol(sympol)" style="background-color: white"><img v-for="image in sympol.images" v-bind:src="image.url" alt=""></a>  
+                        </div>
                       </div>
 
-                      <!-- origin search -->
-                      <div v-for="sympol in sympols" v-if="origin_search">
-                        <a class="btn js-scroll-trigger" href="#show" v-on:click="loadCurrentSympol(sympol)"><img v-for="image in sympol.images" v-bind:src="image.url" alt=""> {{ sympol.name }}</a>
-                      </div>
-                      
-                      <!-- trait search -->
-                      <div v-for="sympol in sympols" v-if="trait_search">
-                        <a class="btn js-scroll-trigger" href="#show" v-on:click="loadCurrentSympol(sympol)"><img v-for="image in sympol.images" v-bind:src="image.url" alt=""></a>
-                      </div>
-                    </div>
-            
+                        <!-- origin search -->
+                      <div class="row">
+                        <div class="col-md-4" v-for="sympol in sympols" v-if="origin_search">
+                          <a class="btn js-scroll-trigger" href="#show" v-on:click="loadCurrentSympol(sympol)" style="background-color: white"><img v-for="image in sympol.images" v-bind:src="image.url" alt=""></a>
+                        </div>
+                      </div>  
+
+                      <!-- description search -->
+                      <div class="row">
+                        <div class="col-md-4" v-for="sympol in sympols" v-if="origin_search">
+                          <a class="btn js-scroll-trigger" href="#show" v-on:click="loadCurrentSympol(sympol)" style="background-color: white"><img v-for="image in sympol.images" v-bind:src="image.url" alt=""></a>
+                        </div>
+                      </div> 
+
+                    </div>     
+
                   </div>
                 </div>        
             </div>
         </div> 
+    </section>
+
+    <section id="trait-search">
+      <!-- TRAIT SEARCH -->
+      <div class="trait-container">
+        <p>Filter by Symbol traits: </p>                                      
+        
+        <!-- select Symmetry -->
+        <label>Symmetry</label>
+        <select class="btn btn-sm dropdown-toggle" type="button" v-model="traitSelected" v-on:change="addToSearchTraits()" list="sympol-symmetry">
+          <datalist id="sympol-symmetry">                       
+            <option  class="dropdown-item" disabled value="">Symmetry</option>
+            <option class="dropdown-item">symmetric</option>
+            <option class="dropdown-item">asymmetric</option>
+          </datalist >
+        </select>
+
+        <!-- select Lining -->
+        <label>Lining</label>
+        <select class="btn btn-sm dropdown-toggle" type="button" v-model="traitSelected" v-on:change="addToSearchTraits()" list="sympol-linings">
+          <datalist id="sympol-linings">
+            <option class="dropdown-item" disabled value="">Lining</option>
+            <option>straight</option>
+            <option>curved</option>
+            <option>straight and curved</option>
+          </datalist>
+        </select>
+
+        <!-- select Borders -->
+        <label>Border</label>
+        <select class="btn btn-sm dropdown-toggle" type="button" v-model="traitSelected" v-on:change="addToSearchTraits()" list="sympol-borders"> 
+          <datalist id="sympol-symmetry">
+            <option class="dropdown-item" disabled value="">Border</option>
+            <option>open</option>
+            <option>closed</option>
+            <option>open and closed</option>
+          </datalist>
+        </select>
+
+        <!-- select Shape -->
+        <label>Shape</label>
+        <select v-model="traitSelected" v-on:change="addToSearchTraits()" list="sympol-shapes">
+          <datalist id="sympol-shapes">
+            <!-- <option class="dropdown-item" disabled value="">Shape</option> -->
+            <option>circle</option>
+            <option>triangle</option>
+            <option>rectangle</option>
+            <option>square</option>
+            <option>spiral</option>
+            <option>knot</option>
+            <option>star</option>
+            <option>cross</option>
+          </datalist>
+        </select>
+        
+        <!-- select number -->
+        <label>Number</label>
+        <select class="btn btn-sm dropdown-toggle" type="button" v-model="traitSelected" v-on:change="addToSearchTraits()" list="sympol-numbers">
+          <datalist id="sympol-numbers">
+            <option class="dropdown-item" disabled value="">Number</option>
+            <option>single</option> 
+            <option>double</option>
+            <option>triple</option>
+            <option>quadruple (4)</option>
+            <option>quintuple (5)</option>
+            <option>sextuple (6)</option>
+            <option>septuple (7)</option>
+            <option>octuple (8)</option>
+            <option>nonuple (9)</option>
+            <option>decuple (10)</option>
+          </datalist>
+        </select>
+
+          <h4>{{searchTraits}}</h4>
+
+          <br><br><button v-on:click="updateTrait()">Search</button>
+
+      
+        <!-- trait search -->
+        <div class="row">  
+          <div class="col-md-4" v-for="sympol in sympols" v-if="trait_search">
+            <a class="btn js-scroll-trigger" href="#show" v-on:click="loadCurrentSympol(sympol)" style="background-color: white"><img v-for="image in sympol.images" v-bind:src="image.url" alt=""></a>
+          </div>
+        </div>
+      </div>
     </section>
     
     <section id="show">
@@ -294,6 +320,43 @@
   
   </div>
 </template>
+
+<template id="submit-image-page">
+  <section id="services">
+    <div class="container wow fadeInUp">
+      <div class="container">
+        <div class="section-title-divider"></div>
+          <h4 class="section-description text-outline">Upload image to find your desired symbol</h4>
+            
+            <!-- <button class="btn" @click="removeFile">REMOVE</button> -->
+           
+            <div class="drop display-inline align-center" @dragover.prevent @drop="onDrop">
+
+              <label v-if="!image" class="btn display-inline" v-on:change="uploadFile($event)">
+                      SELECT OR DROP AN IMAGE
+                      <input type="file" name="image" @change="onChange">
+              </label>
+
+              <div class="hidden display-inline align-center" v-else v-bind:class="{ 'image': true }">
+                <img :src="image" alt="" class="img">
+                <br>
+                <br>
+              <button class="btn" @click="removeFile">REMOVE</button>
+              </div>
+            </div>
+        
+        <div class="row">
+          <div class="col-md-4 service-item" v-for="url in urls">
+          <h4 class="text-outline" style="color:black">Click icon to visit sympol website</h4>
+            <a v-bind:href="url" class="text-outline service-icon" target="_blank"><i class="fa fa-paper-plane"></i></a>
+            <p class="service-description text-outline" style="color:black;">{{ url }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+
 
 <template id="sympols-post-page">
   <div class="vue-component">
@@ -316,51 +379,6 @@
     </div>
 
   </div>
-</template>
-
-<template id="submit-image-page">
-  <section id="services">
-    <div class="container wow fadeInUp">
-      <div class="container">
-        <div class="section-title-divider"></div>
-          <h4 class="section-description text-outline">Upload image to find your desired symbol</h4>
-
-            <!-- simple Drag and Drop - this works! -->
-<!--             <div>
-              <div id="dropContainer" style="border:1px solid black;height:100px;">
-                 Drop Here
-              </div>
-
-              Should update here:
-              <input type="file" id="fileInput" v-on:change="uploadFile($event)">         
-            </div> -->
-
-            <div class="drop display-inline align-center" @dragover.prevent @drop="onDrop">
-
-              <label v-if="!image" class="btn display-inline" v-on:change="uploadFile($event)">
-                      SELECT OR DROP AN IMAGE
-                      <input type="file" name="image" @change="onChange">
-              </label>
-
-              <div class="hidden display-inline align-center" v-else v-bind:class="{ 'image': true }">
-                <img :src="image" alt="" class="img">
-                <br>
-                <br>
-                <button class="btn" @click="removeFile">REMOVE</button>
-              </div>
-
-            </div>
-        
-        <div class="row">
-          <div class="col-md-4 service-item" v-for="url in urls">
-          <h4 class="text-outline" style="color:black">Click icon to visit sympol website</h4>
-            <a v-bind:href="url" class="text-outline service-icon" target="_blank"><i class="fa fa-paper-plane"></i></a>
-            <p class="service-description text-outline" style="color:black;">{{ url }}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 </template>
 
 

@@ -1,4 +1,6 @@
 body {
+  background-color: #FFF0D4;
+  background-image: url("intersection.png");
   overflow-x: hidden;
   font-family: 'Roboto Slab', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
@@ -54,22 +56,12 @@ section h3.section-subheading {
   }
 }
 
-#show {
-  margin-top: 500px;
-  padding-bottom: 500px;
-}
-
 #services {
   padding-top: 150px;
 }
 
 .traits-container {
   padding-top: 15px;
-}
-
-.btn {
-  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 700;
 }
 
 .btn-xl {
@@ -121,16 +113,15 @@ img::-moz-selection {
   text-transform: uppercase;
   color: white;
   border: 0;
-  background-color: #fed136;
+  background-color: black;
   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 /*your profile*/
 #mainNav .navbar-brand {
-  color: #fed136;
+  color: black;
   font-family: 'Kaushan Script', 'Helvetica Neue', Helvetica, Arial, cursive;
 }
-
 
 #mainNav .navbar-brand.active, #mainNav .navbar-brand:active, #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
   color: #fec503;
@@ -171,7 +162,7 @@ img::-moz-selection {
   #mainNav.navbar-shrink {
     padding-top: 0;
     padding-bottom: 0;
-    background-color: #212529;
+    background-color: #E8A64E;
   }
   #mainNav.navbar-shrink .navbar-brand {
     font-size: 1.25em;
