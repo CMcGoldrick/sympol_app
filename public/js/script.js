@@ -8,15 +8,15 @@ var SympolsIndexPage = {
 
       name_search: false,
       origin_search: false,
+      description_search: false,
       trait_search: false,
       
       nameIndex: "",
       originIndex: "",
+      descriptionIndex: "",
 
       traitSelected: "",
       searchTraits: [],
-
-      twoWayBindExample: ""
     };
   },
 
@@ -53,6 +53,16 @@ var SympolsIndexPage = {
         }.bind(this));
       }
     },
+    updateDescription: function() {
+      this.description_search = true;
+      if (this.originIndex) {
+        axios.get("/sympols?search_description=" + this.descriptionIndex)
+        .then(function(response) {
+          console.log("may day");
+          this.sympols = response.data;
+        }.bind(this));
+      }
+    },
     updateTrait: function() {
       this.trait_search = true;
       if (this.searchTraits) {
@@ -70,6 +80,20 @@ var SympolsIndexPage = {
         this.sympols = response.data;
       }.bind(this));
   },
+  mounted: function() {
+    $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
+      if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+        if (target.length) {
+          $('html, body').animate({
+            scrollTop: (target.offset().top - 54)
+          }, 1000, "easeInOutExpo");
+          return false;
+        }
+      }
+    });
+  }
 };
 
 var SympolsPostPage = {
@@ -83,7 +107,7 @@ var SympolsPostPage = {
   },
   created: function() {},
   methods: {
-    uploadFile: function(event) {
+    uploadSympol: function(event) {
       if (event.target.files.length > 0) {
         var formData = new FormData();
         formData.append("name", this.name);
@@ -106,46 +130,93 @@ var SympolsPostPage = {
   computed: {}
 };
 
+
 var SubmitImagePage = {
   template: "#submit-image-page",
   data: function() {
     return {
       // errors: [],
-      urls: []
+      urls: [],
+      image: ""
     };
   },
   methods: {
     uploadFile: function(event) {
+      // console.log(event.target.files);
       if (event.target.files.length > 0) {
         var formData = new FormData();
         formData.append("image", event.target.files[0]);
 
         axios.post("/images", formData).then(
           function(response) {
+            console.log(response.data);
             this.urls = response.data;
             // console.log(this.urls);
             event.target.value = "";
           }.bind(this)
         );
       }
+    },
+    onDrop: function(e) {
+      // console.log(e);
+      e.stopPropagation();
+      e.preventDefault();
+      var files = e.dataTransfer.files;
+      this.createFile(files[0]);
+      if (files.length > 0) {
+        var formData = new FormData();
+        formData.append("image", files[0]);
 
-      // submit: function() {
-      //   var params = {
-      //     product_link: this.productLink
-      //   };
-      //   axios
-      //     .post("/images", params)
-      //     .then(function(response) {
-      //       router.push("/imageResults");
-      //     })
-      //     .catch(
-      //       function(error) {
-      //         this.errors = error.response.data.errors;
-      //       }.bind(this)
-      //     );
-      // }
-    }
+        axios.post("/images", formData).then(
+          function(response) {
+            console.log(response.data);
+            this.urls = response.data;
+            // console.log(this.urls);
+            event.target.value = "";
+          }.bind(this)
+        );
+      }
+    },
+    onChange(e) {
+      var files = e.target.files;
+      this.createFile(files[0]);
+    },
+    createFile(file) {
+      if (!file.type.match("image.*")) {
+        alert("Select an image");
+        return;
+      }
+      var img = new Image();
+      var reader = new FileReader();
+      var vm = this;
+
+      reader.onload = function(e) {
+        vm.image = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    },
+    removeFile() {
+      this.image = "";
+    },
   }
+};
+
+var ImageResultPage = {
+  template: "#image-result-page",
+  data: function() {
+    return {
+      urls: []
+    };
+  },
+  created: function() {
+    axios.get("/images").then(
+      function(response) {
+        this.urls = response.data;
+      }.bind(this)
+    );
+  },
+  methods: {},
+  computed: {}
 };
 
 var ImageResultPage = {
@@ -241,12 +312,11 @@ var LogoutPage = {
 };
 
 
-
 var router = new VueRouter({
   routes: [
             { path: "/", component: SympolsIndexPage},  
             { path: "/post", component: SympolsPostPage },
-            { path: "/submitimage", component: SubmitImagePage },
+            { path: "/browse", component: SubmitImagePage },
             { path: "/imageResult", component: ImageResultPage },
             { path: "/signup", component: SignupPage },
             { path: "/login", component: LoginPage },
@@ -256,7 +326,6 @@ var router = new VueRouter({
     return { x: 0, y: 0 };
   }
 });
-
 
 
 var app = new Vue({

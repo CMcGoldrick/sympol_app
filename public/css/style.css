@@ -1,5 +1,93 @@
 img {
-  height: 300px;
-  width: 300px;
+  height: 220px;
 }
+
+
+* {
+  font-family: 'Arial';
+  font-size: 12px;
+}
+
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-touch-callout: none;
+}
+
+html, body {
+  height: 100%;
+  text-align: center;
+}
+
+.btn {
+  background-color: #d3394c;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: bold;
+  padding: 15px 35px;
+  position: relative;
+}
+
+.btn:hover {
+  background-color: #722040;
+}
+
+input[type="file"] {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.helper {
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+  width: 0;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.hidden.image {
+  display: inline-block !important;
+}
+
+.display-inline {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.img {
+  border: 1px solid #f6f6f6;
+  display: inline-block;
+  height: auto;
+  max-height: 80%;
+  max-width: 80%;
+  width: auto;
+}
+
+.drop {
+  background-color: #f2f2f2;
+  border: 4px dashed #ccc;
+  background-color: #f6f6f6;
+  border-radius: 2px;
+  height: 100%;
+  max-height: 400px;
+  max-width: 600px;
+  width: 100%;
+}
+
+
+
 

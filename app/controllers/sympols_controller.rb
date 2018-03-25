@@ -97,7 +97,7 @@ class SympolsController < ApplicationController
 
     # render json: @image_descriptions
 
-      # IMAGE SEARCH
+      # LINK SEARCH
       image_path = params[:image]
       image  = vision.image image_path
       web = image.web
@@ -105,6 +105,7 @@ class SympolsController < ApplicationController
       web_links = []
       index = 0
       web_length = web.pages_with_matching_images.length 
+      
       web_length.times do
         web_links << web.pages_with_matching_images[index].grpc['url']
         index += 1 

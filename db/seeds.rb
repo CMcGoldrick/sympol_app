@@ -108,8 +108,6 @@
 #     {url: "/images/Celtic/shamrock.png", sympol_id: 12},
 #     {url: "/images/Celtic/celtic_hounds.png", sympol_id: 13},
 #     {url: "/images/Celtic/celtic_salmon.jpg", sympol_id: 14},
-#     {url: "/images/Celtic/sheela.jpg", sympol_id: 15},
-#     {url: "/images/Celtic/cerne_abbas_giant.jpg", sympol_id: 16},
 #     {url: "/images/Celtic/cernunnos.jpg", sympol_id: 17},
 #     {url: "/images/Celtic/celtic_greenman.jpg", sympol_id: 18},
 #     {url: "/images/Celtic/celtic_bull.png", sympol_id: 19},
