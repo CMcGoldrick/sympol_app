@@ -6,10 +6,11 @@ body {
 
 p {
   line-height: 1.75;
+  font-size: 30px;
 }
 
 a {
-  color: #fed136;
+  color: red;
 }
 
 a:hover {

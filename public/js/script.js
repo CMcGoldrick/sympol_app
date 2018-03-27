@@ -55,7 +55,7 @@ var SympolsIndexPage = {
     },
     updateDescription: function() {
       this.description_search = true;
-      if (this.originIndex) {
+      if (this.descriptionIndex) {
         axios.get("/sympols?search_description=" + this.descriptionIndex)
         .then(function(response) {
           console.log("may day");

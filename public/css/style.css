@@ -1,5 +1,5 @@
 img {
-  height: 220px;
+  height: 130px;
 }
 
 .signup-div, .login-div{
@@ -9,7 +9,6 @@ img {
 
 #search {
   padding-bottom: 800px;
-  /*background-image: url("intersection.png");*/
 }
 
 #trait-search {
@@ -18,8 +17,7 @@ img {
 }
 
 #show {
-  margin-top: 35px;
-  padding-bottom: 500px;
+  padding-bottom: 700px;
 }
 
 /*CAME WITH DRAG AND DROP FUNCTIONALITY*/
@@ -100,7 +98,7 @@ input[type="file"] {
   border: 4px dashed #ccc;
   background-color: #f6f6f6;
   border-radius: 2px;
-  height: 200px;
+  height: 100%;
 /*  max-height: 400px;
   max-width: 600px;*/
   width: 100%;

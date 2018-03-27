@@ -42,7 +42,7 @@
       <div class="container">
         <a class="navbar-brand js-scroll-trigger" href="/#/">Sympol</a>
 
-        <a class="browse js-scroll-trigger" href="/#/browse" style="color:black">Browse the web</a>
+        <a class="browse js-scroll-trigger" href="/#/browse" style="color:black; font-size:20px; margin-left:350px">Browse the web</a>
 
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
@@ -98,10 +98,10 @@
           <div class="col-md-4">
             <ul class="list-inline quicklinks">
               <li class="list-inline-item">
-                <a href="#">Privacy Policy</a>
+                <a href="#" style="color:black">Privacy Policy</a>
               </li>
               <li class="list-inline-item">
-                <a href="#">Terms of Use</a>
+                <a href="#" style="color:black">Terms of Use</a>
               </li>
             </ul>
           </div>
@@ -134,7 +134,7 @@
           <div class="container">
             <div class="intro-text">
               <div class="intro-lead-in">Welcome to Sympol<div>
-                <div class="intro-heading text-uppercase">Ancient symbol searching made simple</div>
+                <div class="intro-heading">ancient Symbol searching made Simple</div>
                 <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#search"> start searching!</a>                    
             </div>
           </div> 
@@ -146,14 +146,14 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">Search our Sympol database here!</h2>
-            <h3 class="section-subheading text-muted">Can't find your sympol? Try searching based on characteristics:   <a class="btn-lg js-scroll-trigger" href="#trait-search"> Go! </a></h3>
+            <h3 class="section-heading">Search the Sympol library here!</h3>
+            <h3 class="section-subheading">Can't find your symbol? Try searching based on the symbol characteristics:   <a class="btn-lg js-scroll-trigger" href="#trait-search"> Go! </a></h3>
                    
                 <div class="row">  
                     <!-- NAME SEARCH -->
                   <div class="col-lg-4">  
                     <div class="container">
-                      <p>Search by Symbol name: </p>
+                      <p style="font-size:18px">Search by Symbol name: </p>
                       <input v-model="nameIndex" list="sympol-names" v-on:change="updateName()">
                         
                         <datalist  id="sympol-names">
@@ -167,12 +167,16 @@
                     <!-- ORIGIN SEARCH -->
                   <div class="col-lg-4">
                     <div class="container">
-                      <p>Filter by Symbol origin: </p>
+                      <p style="font-size:18px">Filter by Symbol origin: </p>
                       <input v-model="originIndex" list="sympol-origins" v-on:change="updateOrigin()">
 
                         <datalist id="sympol-origins">
                           <option>Celtic</option>
                           <option>Adinkra</option>
+                          <option>Assyrian</option>
+                          <option>Egyptian</option>
+                          <option>Greek</option>
+                          <option>Zodiac</option>
                         </datalist>
 
                     </div> 
@@ -182,13 +186,12 @@
                   <!-- DESCRIPTION SEARCH      -->
                   <div class="col-lg-4">
                     <div class="container">
-                      <p>Filter by Symbol description: </p>
+                      <p style="font-size:18px">Filter by Symbol description: </p>
                       <input v-model="descriptionIndex" v-on:change="updateDescription()">
                     </div>
                   </div>
                       
-                      <!-- name search -->
-
+                    <!-- name search -->
                     <div class="search-results">
 
                       <div class="row">
@@ -197,7 +200,7 @@
                         </div>
                       </div>
 
-                        <!-- origin search -->
+                      <!-- origin search -->
                       <div class="row">
                         <div class="col-md-4" v-for="sympol in sympols" v-if="origin_search">
                           <a class="btn js-scroll-trigger" href="#show" v-on:click="loadCurrentSympol(sympol)" style="background-color: white"><img v-for="image in sympol.images" v-bind:src="image.url" alt=""></a>
@@ -206,7 +209,7 @@
 
                       <!-- description search -->
                       <div class="row">
-                        <div class="col-md-4" v-for="sympol in sympols" v-if="origin_search">
+                        <div class="col-md-4" v-for="sympol in sympols" v-if="description_search">
                           <a class="btn js-scroll-trigger" href="#show" v-on:click="loadCurrentSympol(sympol)" style="background-color: white"><img v-for="image in sympol.images" v-bind:src="image.url" alt=""></a>
                         </div>
                       </div> 
@@ -225,8 +228,8 @@
         <p>Filter by Symbol traits: </p>                                      
         
         <!-- select Symmetry -->
-        <label>Symmetry</label>
-        <select class="btn btn-sm dropdown-toggle" type="button" v-model="traitSelected" v-on:change="addToSearchTraits()" list="sympol-symmetry">
+        <label>Symmetry: </label>
+        <select v-model="traitSelected" v-on:change="addToSearchTraits()" list="sympol-symmetry">
           <datalist id="sympol-symmetry">                       
             <!-- <option  class="dropdown-item" disabled value="">Symmetry</option> -->
             <option class="dropdown-item">symmetric</option>
@@ -235,8 +238,8 @@
         </select>
 
         <!-- select Lining -->
-        <label>Lining</label>
-        <select class="btn btn-sm dropdown-toggle" type="button" v-model="traitSelected" v-on:change="addToSearchTraits()" list="sympol-linings">
+        <label>Lining: </label>
+        <select v-model="traitSelected" v-on:change="addToSearchTraits()" list="sympol-linings">
           <datalist id="sympol-linings">
             <!-- <option class="dropdown-item" disabled value="">Lining</option> -->
             <option>straight</option>
@@ -246,8 +249,8 @@
         </select>
 
         <!-- select Borders -->
-        <label>Border</label>
-        <select class="btn btn-sm dropdown-toggle" type="button" v-model="traitSelected" v-on:change="addToSearchTraits()" list="sympol-borders"> 
+        <label>Border: </label>
+        <select v-model="traitSelected" v-on:change="addToSearchTraits()" list="sympol-borders"> 
           <datalist id="sympol-symmetry">
             <!-- <option class="dropdown-item" disabled value="">Border</option> -->
             <option>open</option>
@@ -257,7 +260,7 @@
         </select>
 
         <!-- select Shape -->
-        <label>Shape</label>
+        <label>Shape: </label>
         <select v-model="traitSelected" v-on:change="addToSearchTraits()" list="sympol-shapes">
           <datalist id="sympol-shapes">
             <!-- <option class="dropdown-item" disabled value="">Shape</option> -->
@@ -273,10 +276,10 @@
         </select>
         
         <!-- select number -->
-        <label>Number</label>
-        <select class="btn btn-sm dropdown-toggle" type="button" v-model="traitSelected" v-on:change="addToSearchTraits()" list="sympol-numbers">
+        <label>Number: </label>
+        <select v-model="traitSelected" v-on:change="addToSearchTraits()" list="sympol-numbers">
           <datalist id="sympol-numbers">
-            <option class="dropdown-item" disabled value="">Number</option>
+            <!-- <option class="dropdown-item" disabled value="">Number</option> -->
             <option>single</option> 
             <option>double</option>
             <option>triple</option>
@@ -327,7 +330,8 @@
     <div class="container wow fadeInUp">
       <div class="container">
         <div class="section-title-divider"></div>
-          <h4 class="section-description text-outline">Upload image to find your desired symbol</h4>
+          <h4 class="section-description text-outline">Upload or Drag and Drop an image to find your symbol.</h4>
+          <h4 class="section-description text-outline">Sympol as a potato!</h4>
             
             <!-- <button class="btn" @click="removeFile">REMOVE</button> -->
            
@@ -345,12 +349,14 @@
               <button class="btn" @click="removeFile">REMOVE</button>
               </div>
             </div>
+
+            <br><br><br>
         
         <div class="row">
           <div class="col-md-4 service-item" v-for="url in urls">
-          <h4 class="text-outline" style="color:black">Click icon to visit sympol website</h4>
+          <!-- <h4 class="text-outline" style="color:black">Click icon to visit sympol website</h4> -->
             <a v-bind:href="url" class="text-outline service-icon" target="_blank"><i class="fa fa-paper-plane"></i></a>
-            <p class="service-description text-outline" style="color:black;">{{ url }}</p>
+            <p class="service-description text-outline" style="color:black; font-size:14px">{{ url }}</p>
           </div>
         </div>
       </div>
