@@ -149,6 +149,24 @@
 #   {name: "Taurus", origin: "Zodiac", description:"Taurus is the second astrological sign in the Zodiac. It spans the 30-60th degree of the zodiac, between 27.25 and 54.75 degree of celestial longitude, which the Sun transits this area on average between April 21 to May 22 each year."},
 #   {name: "Virgo", origin: "Zodiac", description:"Virgo is the sixth astrological sign in the Zodiac. It spans the 150-180th degree of the zodiac, between 152.75 and 180 degree of celestial longitude, which the Tropical zodiac the Sun transits this area on average between August 23 to September 22 each year. Virgo is also part of the 12 zodiac signs."},
 #   {name: "Cancer", origin: "Zodiac", description:"Cancer is an astrological sign, which is associated with the constellation Cancer. It spans the 90-120th degree of the zodiac, between 90 and 125.25 degree of celestial longitude, which the Sun transits this area on average between June 22 to July 22 each year."}
+
+# {name:"Hah Taew", origin:"Sak Yant", description:"The Sak Yant Hah Taew dates its origin back over 700 years to the ancient Kingdom of Lanna which is now known as Northern Thailand.  The Buddhist Monk credited with the design of the Hah Taew 5 Lines Sak Yant is Kruba Kam of Wat Ton Pin, a Buddhist Temple in Chiang Mai, which unfortunately no longer exists today. Kruba Kam designed the Hah Taew at around the time King Mengrai founded the city of Chiang Mai in 1296. The Sak Yant Hah Taew dates its origin back over 700 years to the ancient Kingdom of Lanna which is now known as Northern Thailand.  The Buddhist Monk credited with the design of the Hah Taew 5 Lines Sak Yant is Kruba Kam of Wat Ton Pin, a Buddhist Temple in Chiang Mai, which unfortunately no longer exists today. Kruba Kam designed the Hah Taew at around the time King Mengrai founded the city of Chiang Mai in 1296. / / 1. The first row prevents unjust punishment and leans in your favor when the area is grey, cleans out unwanted spirits and protects the place you live in.
+
+# / 2. The second row reverses and protects against bad horoscope constellations and bad fortune.
+
+# / 3. The third row protects you from the use of black magic and anyone who tries to put a curse on you.
+
+# / 4. The fourth row energizes your good luck, success and fortune in your future ambitions and life style.
+
+# / 5.The fifth row  is to gain charisma and attraction to the opposite sex. It is also is a boost to the fourth row."},
+# {name:"Gao Yord", origin:"Sak Yant", description:"The Gao Yord is the “Yant Kru” or Master Yant and is a most sacred Buddhist tattoo with very wide ranging powers of protection and is quite possibly the most important of all the available Sak Yant designs. Many people will choose the Gao Yord as their first Sak Yant because of its universal powers and later add other Sak Yant designs of their choice. The basic design of the Gao Yord represents the nine peaks of the mythical mountain of the Gods, Mount Meru. According to Hindu mythology, Mount Meru is the abode of the Lord Brahma as well as other Deities. In Buddhist mythology, Mount Meru is known as Sumeru."},
+# {name:"Paed Tidt", origin:"Sak Yant", description:"The Sak Yant design ‘Paed Tidt’ or Eight Direction Yant is a sacred Geometric Yant containing eight Mantras written in 2 concentric circles in the center of the design. The design of the Paed Tidt Yant also incorporates eight representations of the Buddha. These are the groups of 3 ovals each increasing in size from the top. In Thailand, there is a Buddha image, each one in a different pose, for every day of the week. (On Wednesdays there are 2 Buddhas, one for the morning and one for the evening) and these 8 Buddha Images can be seen in many Thai temples, usually surrounding a Chedi.
+# /
+# The Paed Tidt Yant will give you protection in whichever direction you are traveling and ward off evil spirits. The script used on the Paed Tidt Yant is an ancient Khmer script known as Khom. The Mantras written in the Paed Tidt Yant and which should be chanted when going out to give further protection are as follows."},
+# {name:"Hanuman", origin:"Sak Yant", description:"Hanuman is the Hindu mythical Monkey God in the time of Rama and  is invincible and has powers far greater than humans, including the ability to fly. In Thai culture Hanuman leads a monkey army to rid the world of unwanted spirits. His main traits were humility and bravery, he was looked upon as hope for humanity, demonstrating to man that a mortal being can in fact rise above the shallowness of our worldly plain. There are different variations of Sak Yants with Hanuman. It is obtained and used to bestow the wearer with the qualities of protection  from danger as well as becoming fearless in the face of adversity. Hanuman also helps to strengthen self-confidence and can influence people on your behalf. It is also said to help one stay focused and gives the determination needed to see something through to a successful conclusion."},
+# {name:"Yant Suea", origin:"Sak Yant", description:"Represents power and authority.  The Twin Tiger Sak Yant Tattoo is common among Thai people with dangerous occupations and Muay Thai Fighters.  The Tiger represents strength, power, protection and conviction, as well as authority over ones subordinates."},
+# {name:"Chat Petch", origin:"Sak Yant", description:"Chat Petch means 'from the sky, high above the earth', and was first designed by one of the most famous Thai Tattoo Master : Ajarn Noo Kanpai. The sacred Mantras are interconnected and represent spiritual values continually flowing like water. It brings balance and peace, both spiritually and artistically. Some of Chat Petch’s mystical powers include inner power and strength, good luck, protection for yourself and your loved ones, management skills, wealth and success in your career."},
+
 # ])
 
 # Image.create!([
@@ -299,6 +317,15 @@
 #     {url: "/images/Zodiac/Taurus.png", sympol_id: 141},
 #     {url: "/images/Zodiac/Virgo.png", sympol_id: 142},
 #     {url: "/images/Zodiac/Cancer.png", sympol_id: 143},
+
+# {url: "images/Sak_Yant/hah_taew_.jpg", sympol_id: "144"},
+# {url: "images/Sak_Yant/gao_yord_one.jpg", sympol_id: "145"},
+# {url: "images/Sak_Yant/paed_tidt_one.jpg", sympol_id: "146"},
+# {url: "images/Sak_Yant/hanuman_one.jpg", sympol_id: "147"},
+# {url: "images/Sak_Yant/Yant_suea.jpg", sympol_id: "148"},
+# {url: "images/Sak_Yant/chat_petch.jpg", sympol_id: "149"}
+
+
 
 # ])
 
