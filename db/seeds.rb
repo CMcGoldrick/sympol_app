@@ -1,4 +1,4 @@
-        # PRODUCTION
+#         # PRODUCTION
 # Sympol.create!([
 #     {name: "Triquetra", origin: "Celtic", description: "Latin meaning 'threecornered' It's a holy symbol, and it's meanings are many. It varies in its aspects of spirit, nature, being-ness, and of the cosmos. This trinity symbol, as most others, reflects core concepts such as: Mind, Body, Spirit. Afterlife, Underworld, Physical life. Tribe, Country, Deity (god/goddess). These are just a few trinities folded within this Celtic symbol meaning. There are many more. The differences lay in the intent of the symbol, and the tribe that was using at the time in Celtic history. The negative space in the center of this symbol symbolizes the center of all influences. In personal ritual, it could represent the self at the center of trinity influences. In a tribe, the center is the heart of the people with the three elements creating an unbreakable union."},
 #     {name: "Triskele", origin: "Celtic", description: "This is another trinity symbol often found among ancient Celtic relics. It is sometimes referred to as a triskelion. The terms are often considered synonymous. This Celtic symbol meaning deals with the drawing of the three powers of maiden, mother and crone. It is often considered a sign of female power and especially power through transition and growth. This, however, is not an exclusive definition. Sometimes the symbol represents religious aspects of Father, Son, Holy Ghost. This representation came much later amongst Celtic descendants who were exposed to Christian conversion. In any instance, this trinity symbol can represent a triangle of foundational necessity. Meaning - you cannot have a healthy whole without all three elements joined together. Hence: Mind, Body, Spirit. Sun, Moon, Earth. Light, Dark, Gloaming (twilight). Not one energy can exist without the others."},
@@ -166,6 +166,40 @@
 # {name:"Hanuman", origin:"Sak Yant", description:"Hanuman is the Hindu mythical Monkey God in the time of Rama and  is invincible and has powers far greater than humans, including the ability to fly. In Thai culture Hanuman leads a monkey army to rid the world of unwanted spirits. His main traits were humility and bravery, he was looked upon as hope for humanity, demonstrating to man that a mortal being can in fact rise above the shallowness of our worldly plain. There are different variations of Sak Yants with Hanuman. It is obtained and used to bestow the wearer with the qualities of protection  from danger as well as becoming fearless in the face of adversity. Hanuman also helps to strengthen self-confidence and can influence people on your behalf. It is also said to help one stay focused and gives the determination needed to see something through to a successful conclusion."},
 # {name:"Yant Suea", origin:"Sak Yant", description:"Represents power and authority.  The Twin Tiger Sak Yant Tattoo is common among Thai people with dangerous occupations and Muay Thai Fighters.  The Tiger represents strength, power, protection and conviction, as well as authority over ones subordinates."},
 # {name:"Chat Petch", origin:"Sak Yant", description:"Chat Petch means 'from the sky, high above the earth', and was first designed by one of the most famous Thai Tattoo Master : Ajarn Noo Kanpai. The sacred Mantras are interconnected and represent spiritual values continually flowing like water. It brings balance and peace, both spiritually and artistically. Some of Chat Petch’s mystical powers include inner power and strength, good luck, protection for yourself and your loved ones, management skills, wealth and success in your career."},
+
+# ])
+
+# Trait.create!([
+#   1  {name: "symmetric"},
+#   2  {name: "asymmetric"},
+
+#   3  {name: "straight"},
+#   4  {name: "curved"},
+#   5  {name: "straight and curved"},
+
+#   6  {name: "open"},
+#   7  {name: "closed"},
+#   8  {name: "open and closed"},
+
+#   9 {name: "circle"},
+#   10 {name: "rectangle"},
+#   11 {name: "square"},
+#   12 {name: "spiral"},
+#   13 {name: "knot"},
+#   14 {name: "star"},
+#   15 {name: "cross"},
+#   26 {name: "triangle"},
+
+#   16 {name: "single"},
+#   17 {name: "double"},
+#   18 {name: "triple"},
+#   19 {name: "quadruple (4)"},
+#   20 {name: "quintuple (5)"},
+#   21 {name: "sextuple (6)"},
+#   22 {name: "septuple (7)"},
+#   23 {name: "octuple (8)"},
+#   24 {name: "nonuple (9)"},
+#   25 {name: "decuple (10)"},
 
 # ])
 
@@ -792,60 +826,6 @@
 #   {sympol_id: 90, trait_id: 17},
   
 # ])
-
-# Trait.create!([
-#   1  {name: "symmetric"},
-#   2  {name: "asymmetric"},
-
-#   3  {name: "straight"},
-#   4  {name: "curved"},
-#   5  {name: "straight and curved"},
-
-#   6  {name: "open"},
-#   7  {name: "closed"},
-#   8  {name: "open and closed"},
-
-#   9 {name: "circle"},
-#   10 {name: "rectangle"},
-#   11 {name: "square"},
-#   12 {name: "spiral"},
-#   13 {name: "knot"},
-#   14 {name: "star"},
-#   15 {name: "cross"},
-#   26 {name: "triangle"},
-
-#   16 {name: "single"},
-#   17 {name: "double"},
-#   18 {name: "triple"},
-#   19 {name: "quadruple (4)"},
-#   20 {name: "quintuple (5)"},
-#   21 {name: "sextuple (6)"},
-#   22 {name: "septuple (7)"},
-#   23 {name: "octuple (8)"},
-#   24 {name: "nonuple (9)"},
-#   25 {name: "decuple (10)"},
-
-# ])
-
-
-
-
-
-# UserFavorite.create! ([
-#     {user_id: 1, sympol_id: 1},
-#     {user_id: 1, sympol_id: 4},
-#     {user_id: 1, sympol_id: 21},
-#     {user_id: 2, sympol_id: 1},
-#     {user_id: 2, sympol_id: 3}
-# ])
-
-
-
-
-
-
-
-
 
 
 
