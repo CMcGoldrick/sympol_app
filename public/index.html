@@ -25,13 +25,6 @@
     <link href="css/agency.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet" >
 
-<!-- Vue.js -->
-    <script src="https://unpkg.com/vue/dist/vue.js"></script>
-    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.js"></script>
-
-    <script src="js/script.js" defer></script>
-    <!-- <script src="js/drag_drop.js" defer></script>     -->
 
   </head>
 
@@ -61,13 +54,15 @@
       </div>
     </nav>
 
-    <!-- Header -->
 
+        <!-- body -->
         <div id="vue-app">
-                  
+           
+          <!-- vue.js rendering -->
           <router-view></router-view>
           
         </div>
+
     
     <!-- Footer -->
     <footer>
@@ -135,34 +130,13 @@
             <div class="intro-text">
               <div class="intro-lead-in">Welcome to Sympol<div>
                 <div class="intro-heading">ancient Symbol searching made Simple</div>
-
-<!--                         <ul class='fly-in-text hidden'>
-                          <li>G</li>  
-                          <li>L</li>  
-                          <li>I</li>  
-                          <li>T</li>  
-                          <li>C</li>  
-                          <li>H</li>  
-                        </ul>
- -->
-<!-- <script>
-  $(function() {
-    setTimeout(function() {
-      $('.fly-in-text').removeClass('hidden');
-    },500);
-  });
-</script> -->
-
-
-                      <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#search"> start searching!</a>                    
+                   <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#search"> start searching!</a>                    
             </div>
           </div> 
 
-
-
-
     </header>
 
+    <!-- SYMBOL SEARCH PAGE -->
     <section id="search">
       
       <div class="container">
@@ -245,8 +219,8 @@
         </div> 
     </section>
 
+    <!-- TRAIT SEARCH PAGE-->
     <section id="trait-search">
-      <!-- TRAIT SEARCH -->
       <div class="trait-container">
         <p>Filter by Symbol traits: </p>                                      
         
@@ -348,6 +322,7 @@
   </div>
 </template>
 
+<!-- GOOGLE VISION API PAGE -->
 <template id="submit-image-page">
   <section id="services">
     <div class="container wow fadeInUp">
@@ -389,6 +364,7 @@
 </template>
 
 
+<!-- USER POST PAGE -->
 <template id="sympols-post-page">
   <div class="vue-component">
 
@@ -412,7 +388,7 @@
   </div>
 </template>
 
-
+<!-- USER SIGN UP PAGE -->
 <template id="signup-page">
   <div class="signup-div">
     <div class="vue-component">
@@ -444,7 +420,7 @@
   </div>
 </template>
 
-
+<!-- USER LOGIN PAGE -->
 <template id="login-page">
   <div class="login-div">
     <div class="vue-component">
@@ -469,7 +445,13 @@
   </div>
 </template>
 
+<!-- Vue.js -->
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.js"></script>
 
+    <script src="js/script.js" defer></script>
+    <!-- <script src="js/drag_drop.js" defer></script>     -->
 
 
 
